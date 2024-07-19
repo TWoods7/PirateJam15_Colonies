@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn6tj8pc2m33d"
-path="res://.godot/imported/Cliverun6.png-7de766b2a2bd1c7c282de419153f4921.ctex"
+uid="uid://dgj2gd4slvo7v"
+path="res://.godot/imported/CliveRunLeft5.png-9d0629d934a268deed266c553d86f34f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/Cliverun6.png"
-dest_files=["res://.godot/imported/Cliverun6.png-7de766b2a2bd1c7c282de419153f4921.ctex"]
+source_file="res://Sprites/Characters/Clive Left/CliveRunLeft5.png"
+dest_files=["res://.godot/imported/CliveRunLeft5.png-9d0629d934a268deed266c553d86f34f.ctex"]
 
 [params]
 

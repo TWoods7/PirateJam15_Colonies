@@ -27,12 +27,14 @@ func _physics_process(delta):
 func _game_over():
 	get_tree().reload_current_scene()
 	
-	
+	#Movement animation for clive "runRight" and "runLeft"
 func _process(_delta):
-	if Input.is_key_pressed(KEY_RIGHT) or Input.is_key_pressed(KEY_LEFT):
-		_animated_sprite.play("default")
+	if Input.is_key_pressed(KEY_RIGHT):
+		_animated_sprite.play("runRight")
+	elif Input.is_key_pressed(KEY_LEFT):
+		_animated_sprite.play("runLeft")
 	else:
 		_animated_sprite.stop()
-
+		
 	
 
