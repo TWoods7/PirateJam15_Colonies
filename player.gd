@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@onready var _animated_sprite = $AnimatedSprite2D
 const move_speed = 300.0
 const jump_force = -400.0
 @export var bottom_bound = 150
@@ -26,3 +26,13 @@ func _physics_process(delta):
 	move_and_slide()
 func _game_over():
 	get_tree().reload_current_scene()
+	
+	
+func _process(_delta):
+	if Input.is_key_pressed(KEY_RIGHT) or Input.is_key_pressed(KEY_LEFT):
+		_animated_sprite.play("default")
+	else:
+		_animated_sprite.stop()
+
+	
+
