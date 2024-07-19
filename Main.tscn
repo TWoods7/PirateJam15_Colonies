@@ -1,8 +1,17 @@
 [gd_scene load_steps=2 format=3 uid="uid://ddd4d8x6xj60c"]
 
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://cu4xs0tjgwrqn" path="res://Player.tscn" id="1_wandf"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Node2D" parent="." instance=ExtResource("1_wandf")]
 position = Vector2(323, 141)
+=======
+[ext_resource type="PackedScene" uid="uid://cu4xs0tjgwrqn" path="res://Player.tscn" id="1_komqg"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_komqg")]
+position = Vector2(1586, 215)
+>>>>>>> 3a1164bd8f72024e0a8bbc0ffd56c86a0e9beebd
