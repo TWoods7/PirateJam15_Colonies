@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
 @onready var _animated_sprite = $AnimatedSprite2D
-const move_speed = 300.0
-const jump_force = -400.0
-@export var bottom_bound = 150
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var move_speed = 300.0
+var jump_force = -350.0  
+var bottom_bound = 150
+var jump_count = 0
+var max_jumps = 2
+var gravity = 20
 
 
 func _physics_process(delta):
@@ -25,14 +26,22 @@ func move_animation(): # Hold animations for the movement
 
 func movement_control(delta): # Holds all movement control
 	if not is_on_floor(): #Applies gravity if not in floor
-		velocity.y += gravity * delta
+		velocity.y += gravity
+	if is_on_floor():
+		jump_count = 0
+		
 	velocity.x = 0 #Set's to zero so it isn't constantly moving
+	
 	if Input.is_key_pressed(KEY_LEFT): #Velocity left for moving left
-		velocity.x -= move_speed
+		velocity.x -= move_speed 
 	if Input.is_key_pressed(KEY_RIGHT):#Velocity right for moving right
 		velocity.x += move_speed
-	if Input.is_key_pressed(KEY_SPACE) and is_on_floor(): #Velocity for the jump
-		velocity.y = jump_force
+	
+	if jump_count < max_jumps: 
+		if Input.is_action_just_pressed("ui_accept") : #Velocity for the jump
+			velocity.y = jump_force
+			jump_count+=1
+		
 	if global_position.y > bottom_bound: #Game over if below bottom bound
 		game_over()
 	move_and_slide()
