@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://brwxrmjedwkxt" path="res://Sprites/Characters/Clive Right/Cliverun8.png" id="19_wnvgm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f134i"]
-radius = 5.0
+radius = 4.0
 height = 18.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7lx5j"]
