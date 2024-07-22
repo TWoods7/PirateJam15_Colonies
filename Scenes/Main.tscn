@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://3v42d61ccwxf"]
+[gd_scene load_steps=5 format=3 uid="uid://ddd4d8x6xj60c"]
 
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Sprites/Tiles/tiles_packed.png" id="1_dndhn"]
-[ext_resource type="PackedScene" uid="uid://cv7cpqyxw63f2" path="res://Scenes/Player.tscn" id="2_gnx1k"]
+[ext_resource type="PackedScene" uid="uid://cu4xs0tjgwrqn" path="res://Scenes/Player.tscn" id="2_gnx1k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_equc1"]
 texture = ExtResource("1_dndhn")
@@ -851,7 +851,7 @@ texture_region_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_equc1")
 
-[node name="Node2D" type="Node2D"]
+[node name="Level" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_tx67e")
