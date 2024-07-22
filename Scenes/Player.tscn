@@ -163,5 +163,17 @@ zoom = Vector2(3, 3)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_7lx5j")
+<<<<<<< HEAD
 animation = &"jumpRight"
 frame_progress = 0.07224
+=======
+animation = &"runRight"
+
+[node name="RayCast_Left" type="RayCast2D" parent="Player"]
+rotation = -1.58333
+target_position = Vector2(0.0752246, -5.99953)
+
+[node name="RayCast_Right" type="RayCast2D" parent="Player"]
+rotation = -1.48665
+target_position = Vector2(0.504273, 5.97877)
+>>>>>>> df46e847d9724fe948570d937d3784b952e6d9c0
