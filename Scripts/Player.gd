@@ -23,7 +23,7 @@ var did_right_jump : bool = false
 func _physics_process(delta):
 	movement_control(delta)
 	move_animation()
-	
+
 func game_over(): # Reloads scene when death
 	get_tree().reload_current_scene()
 	
@@ -32,6 +32,10 @@ func move_animation(): # Hold animations for the movement
 		_animated_sprite.play("runRight")
 	elif Input.is_key_pressed(KEY_LEFT) and is_on_floor(): #Plays Running Left animation when moving on floor
 		_animated_sprite.play("runLeft")
+	elif Input.is_action_just_pressed("ui_accept") and (KEY_RIGHT):
+		_animated_sprite.play("jumpRight")
+	elif Input.is_action_just_pressed("ui_accept") and (KEY_LEFT):
+		_animated_sprite.play("jumpLeft")
 	else: #Stays idle when not moving
 		_animated_sprite.stop()
 

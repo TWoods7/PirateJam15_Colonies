@@ -1,18 +1,30 @@
-[gd_scene load_steps=22 format=3 uid="uid://cu4xs0tjgwrqn"]
+[gd_scene load_steps=34 format=3 uid="uid://cu4xs0tjgwrqn"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_m3pgl"]
+[ext_resource type="Texture2D" uid="uid://c6ub8qbvd0dq2" path="res://Sprites/Characters/CliveJumpleft/jumping 1.png" id="2_gcqfv"]
 [ext_resource type="Texture2D" uid="uid://mhh4ajp7yfxf" path="res://Sprites/Characters/Clive Left/CliveRunLeft0.png" id="2_xoy72"]
 [ext_resource type="Texture2D" uid="uid://bxedqluco8dtb" path="res://Sprites/Characters/Clive Left/CliveRunLeft1.png" id="3_r70dr"]
+[ext_resource type="Texture2D" uid="uid://g4etetk6ua3v" path="res://Sprites/Characters/CliveJumpleft/jumping 2.png" id="3_yasmr"]
+[ext_resource type="Texture2D" uid="uid://b5bnhwet2m0ik" path="res://Sprites/Characters/CliveJumpleft/jumping 3.png" id="4_i2ke2"]
 [ext_resource type="Texture2D" uid="uid://chqvu7hafoagk" path="res://Sprites/Characters/Clive Left/CliveRunLeft2.png" id="4_tcfi6"]
+[ext_resource type="Texture2D" uid="uid://dgmsjqk6c8swn" path="res://Sprites/Characters/CliveJumpleft/jumping4.png" id="5_0lph7"]
 [ext_resource type="Texture2D" uid="uid://bp7p8qeev2rai" path="res://Sprites/Characters/Clive Left/CliveRunLeft3.png" id="5_8v4x3"]
 [ext_resource type="Texture2D" uid="uid://c0u4o4jsn5ktc" path="res://Sprites/Characters/Clive Left/CliveRunLeft4.png" id="6_6s1m8"]
+[ext_resource type="Texture2D" uid="uid://bxjlqqi4a2opk" path="res://Sprites/Characters/CliveJumpleft/jumping5.png" id="6_ch8nh"]
 [ext_resource type="Texture2D" uid="uid://dgj2gd4slvo7v" path="res://Sprites/Characters/Clive Left/CliveRunLeft5.png" id="7_ejvuw"]
+[ext_resource type="Texture2D" uid="uid://cwlas0brfahj3" path="res://Sprites/Characters/CliveJumpleft/jumping6.png" id="7_vjaux"]
 [ext_resource type="Texture2D" uid="uid://gbmm37ascopr" path="res://Sprites/Characters/Clive Left/CliveRunLeft6.png" id="8_a8xjf"]
+[ext_resource type="Texture2D" uid="uid://c73l2owpr2lp4" path="res://Sprites/Characters/CliveJumpright/jumping 1.png" id="8_c3q1x"]
 [ext_resource type="Texture2D" uid="uid://dl4vy2ooevc70" path="res://Sprites/Characters/Clive Left/CliveRunLeft7.png" id="9_ad8gt"]
+[ext_resource type="Texture2D" uid="uid://cedgc4q6xmh4q" path="res://Sprites/Characters/CliveJumpright/jumping 2.png" id="9_fbwjw"]
+[ext_resource type="Texture2D" uid="uid://b5toma1tt3808" path="res://Sprites/Characters/CliveJumpright/jumping 3.png" id="10_0gshk"]
 [ext_resource type="Texture2D" uid="uid://b3xdfr3qj7a5j" path="res://Sprites/Characters/Clive Left/CliveRunLeft8.png" id="10_p2ikd"]
 [ext_resource type="Texture2D" uid="uid://b0imvpsuv63h8" path="res://Sprites/Characters/Clive Right/Cliverun0.png" id="11_cij1m"]
+[ext_resource type="Texture2D" uid="uid://yyy5o8x88vsj" path="res://Sprites/Characters/CliveJumpright/jumping4.png" id="11_cmwn2"]
+[ext_resource type="Texture2D" uid="uid://cjgf3js621jx5" path="res://Sprites/Characters/CliveJumpright/jumping5.png" id="12_1xins"]
 [ext_resource type="Texture2D" uid="uid://cbln2hknsj4th" path="res://Sprites/Characters/Clive Right/Cliverun1.png" id="12_xf5xo"]
 [ext_resource type="Texture2D" uid="uid://d3oq4kdalhltn" path="res://Sprites/Characters/Clive Right/Cliverun2.png" id="13_1w4aq"]
+[ext_resource type="Texture2D" uid="uid://dnbapvt5nykbx" path="res://Sprites/Characters/CliveJumpright/jumping6.png" id="13_hjwqx"]
 [ext_resource type="Texture2D" uid="uid://c31t6jt6un2m8" path="res://Sprites/Characters/Clive Right/Cliverun3.png" id="14_n6k6v"]
 [ext_resource type="Texture2D" uid="uid://df0eyx3rdnrit" path="res://Sprites/Characters/Clive Right/Cliverun4.png" id="15_xs4ll"]
 [ext_resource type="Texture2D" uid="uid://jxvph7u21dow" path="res://Sprites/Characters/Clive Right/Cliverun5.png" id="16_pp8o2"]
@@ -26,6 +38,52 @@ height = 18.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7lx5j"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gcqfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yasmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i2ke2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0lph7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ch8nh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vjaux")
+}],
+"loop": true,
+"name": &"jumpLeft",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_c3q1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fbwjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0gshk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cmwn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1xins")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hjwqx")
+}],
+"loop": true,
+"name": &"jumpRight",
+"speed": 60.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_xoy72")
@@ -105,4 +163,5 @@ zoom = Vector2(3, 3)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_7lx5j")
-animation = &"runRight"
+animation = &"jumpRight"
+frame_progress = 0.07224
