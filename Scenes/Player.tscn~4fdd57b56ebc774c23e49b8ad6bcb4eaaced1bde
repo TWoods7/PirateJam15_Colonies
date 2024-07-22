@@ -1,0 +1,108 @@
+[gd_scene load_steps=22 format=3 uid="uid://cu4xs0tjgwrqn"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_m3pgl"]
+[ext_resource type="Texture2D" uid="uid://mhh4ajp7yfxf" path="res://Sprites/Characters/Clive Left/CliveRunLeft0.png" id="2_xoy72"]
+[ext_resource type="Texture2D" uid="uid://bxedqluco8dtb" path="res://Sprites/Characters/Clive Left/CliveRunLeft1.png" id="3_r70dr"]
+[ext_resource type="Texture2D" uid="uid://chqvu7hafoagk" path="res://Sprites/Characters/Clive Left/CliveRunLeft2.png" id="4_tcfi6"]
+[ext_resource type="Texture2D" uid="uid://bp7p8qeev2rai" path="res://Sprites/Characters/Clive Left/CliveRunLeft3.png" id="5_8v4x3"]
+[ext_resource type="Texture2D" uid="uid://c0u4o4jsn5ktc" path="res://Sprites/Characters/Clive Left/CliveRunLeft4.png" id="6_6s1m8"]
+[ext_resource type="Texture2D" uid="uid://dgj2gd4slvo7v" path="res://Sprites/Characters/Clive Left/CliveRunLeft5.png" id="7_ejvuw"]
+[ext_resource type="Texture2D" uid="uid://gbmm37ascopr" path="res://Sprites/Characters/Clive Left/CliveRunLeft6.png" id="8_a8xjf"]
+[ext_resource type="Texture2D" uid="uid://dl4vy2ooevc70" path="res://Sprites/Characters/Clive Left/CliveRunLeft7.png" id="9_ad8gt"]
+[ext_resource type="Texture2D" uid="uid://b3xdfr3qj7a5j" path="res://Sprites/Characters/Clive Left/CliveRunLeft8.png" id="10_p2ikd"]
+[ext_resource type="Texture2D" uid="uid://b0imvpsuv63h8" path="res://Sprites/Characters/Clive Right/Cliverun0.png" id="11_cij1m"]
+[ext_resource type="Texture2D" uid="uid://cbln2hknsj4th" path="res://Sprites/Characters/Clive Right/Cliverun1.png" id="12_xf5xo"]
+[ext_resource type="Texture2D" uid="uid://d3oq4kdalhltn" path="res://Sprites/Characters/Clive Right/Cliverun2.png" id="13_1w4aq"]
+[ext_resource type="Texture2D" uid="uid://c31t6jt6un2m8" path="res://Sprites/Characters/Clive Right/Cliverun3.png" id="14_n6k6v"]
+[ext_resource type="Texture2D" uid="uid://df0eyx3rdnrit" path="res://Sprites/Characters/Clive Right/Cliverun4.png" id="15_xs4ll"]
+[ext_resource type="Texture2D" uid="uid://jxvph7u21dow" path="res://Sprites/Characters/Clive Right/Cliverun5.png" id="16_pp8o2"]
+[ext_resource type="Texture2D" uid="uid://dn6tj8pc2m33d" path="res://Sprites/Characters/Clive Right/Cliverun6.png" id="17_kjpc0"]
+[ext_resource type="Texture2D" uid="uid://dpg52mxtyl4sw" path="res://Sprites/Characters/Clive Right/Cliverun7.png" id="18_c2qqq"]
+[ext_resource type="Texture2D" uid="uid://brwxrmjedwkxt" path="res://Sprites/Characters/Clive Right/Cliverun8.png" id="19_wnvgm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f134i"]
+radius = 4.0
+height = 18.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7lx5j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xoy72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r70dr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tcfi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8v4x3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6s1m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ejvuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a8xjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ad8gt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_p2ikd")
+}],
+"loop": true,
+"name": &"runLeft",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_cij1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xf5xo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1w4aq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n6k6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xs4ll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pp8o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kjpc0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_c2qqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_wnvgm")
+}],
+"loop": true,
+"name": &"runRight",
+"speed": 60.0
+}]
+
+[node name="Player" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_m3pgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_f134i")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_7lx5j")
+animation = &"runRight"
