@@ -1,9 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://cu4xs0tjgwrqn"]
+[gd_scene load_steps=24 format=3 uid="uid://cu4xs0tjgwrqn"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_m3pgl"]
 [ext_resource type="Texture2D" uid="uid://cjgf3js621jx5" path="res://Sprites/Characters/CliveJumpright/jumping5.png" id="2_lbv48"]
 [ext_resource type="Texture2D" uid="uid://dnbapvt5nykbx" path="res://Sprites/Characters/CliveJumpright/jumping6.png" id="3_c46q0"]
+[ext_resource type="Texture2D" uid="uid://bhqsjcbc83mul" path="res://Sprites/Characters/cliveIdleRight/idle 1.png" id="4_2inlg"]
+[ext_resource type="Texture2D" uid="uid://b1hdbj6uhdcgi" path="res://Sprites/Characters/cliveIdleRight/idle 2.png" id="5_gvpxl"]
+[ext_resource type="Texture2D" uid="uid://c73l2owpr2lp4" path="res://Sprites/Characters/CliveJumpright/jumping1.png" id="6_00h2x"]
+[ext_resource type="Texture2D" uid="uid://cedgc4q6xmh4q" path="res://Sprites/Characters/CliveJumpright/jumping2.png" id="7_t7l5m"]
 [ext_resource type="Texture2D" uid="uid://yyy5o8x88vsj" path="res://Sprites/Characters/CliveJumpright/jumping4.png" id="8_o8kh2"]
+[ext_resource type="Texture2D" uid="uid://b5toma1tt3808" path="res://Sprites/Characters/CliveJumpright/jumping3.png" id="8_s0xdc"]
 [ext_resource type="Texture2D" uid="uid://cbln2hknsj4th" path="res://Sprites/Characters/Clive Right/Cliverun1.png" id="9_fo3dq"]
 [ext_resource type="Texture2D" uid="uid://d3oq4kdalhltn" path="res://Sprites/Characters/Clive Right/Cliverun2.png" id="10_dg5uc"]
 [ext_resource type="Texture2D" uid="uid://b0imvpsuv63h8" path="res://Sprites/Characters/Clive Right/Cliverun0.png" id="11_cij1m"]
@@ -36,10 +41,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("4_2inlg")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("5_gvpxl")
 }],
 "loop": true,
 "name": &"idle",
@@ -47,13 +52,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("6_00h2x")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("7_t7l5m")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("8_s0xdc")
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_o8kh2")
@@ -98,7 +103,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 10.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -128,16 +133,16 @@ shape = SubResource("CapsuleShape2D_ya6wj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-7.62939e-06, -9.53674e-07)
 sprite_frames = SubResource("SpriteFrames_4olwm")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
 
 [node name="RayCast_Right" type="RayCast2D" parent="Player"]
 scale = Vector2(10.355, 10.355)
-target_position = Vector2(7.14631, 0.0965717)
+target_position = Vector2(4.82859, 0)
 
 [node name="RayCast_Left" type="RayCast2D" parent="Player"]
 scale = Vector2(-10.355, 10.355)
-target_position = Vector2(7.14631, 0.0965717)
+target_position = Vector2(4.82859, 0)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)
