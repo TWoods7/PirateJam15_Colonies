@@ -1,13 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://cu4xs0tjgwrqn"]
+[gd_scene load_steps=19 format=3 uid="uid://cu4xs0tjgwrqn"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_m3pgl"]
 [ext_resource type="Texture2D" uid="uid://cjgf3js621jx5" path="res://Sprites/Characters/CliveJumpright/jumping5.png" id="2_lbv48"]
 [ext_resource type="Texture2D" uid="uid://dnbapvt5nykbx" path="res://Sprites/Characters/CliveJumpright/jumping6.png" id="3_c46q0"]
-[ext_resource type="Texture2D" uid="uid://bhqsjcbc83mul" path="res://Sprites/Characters/cliveIdleRight/idle 1.png" id="4_6pc45"]
-[ext_resource type="Texture2D" uid="uid://b1hdbj6uhdcgi" path="res://Sprites/Characters/cliveIdleRight/idle 2.png" id="5_ck4by"]
-[ext_resource type="Texture2D" uid="uid://c73l2owpr2lp4" path="res://Sprites/Characters/CliveJumpright/jumping1.png" id="5_odddf"]
-[ext_resource type="Texture2D" uid="uid://cedgc4q6xmh4q" path="res://Sprites/Characters/CliveJumpright/jumping2.png" id="6_hsxgc"]
-[ext_resource type="Texture2D" uid="uid://b5toma1tt3808" path="res://Sprites/Characters/CliveJumpright/jumping3.png" id="7_y5u4i"]
 [ext_resource type="Texture2D" uid="uid://yyy5o8x88vsj" path="res://Sprites/Characters/CliveJumpright/jumping4.png" id="8_o8kh2"]
 [ext_resource type="Texture2D" uid="uid://cbln2hknsj4th" path="res://Sprites/Characters/Clive Right/Cliverun1.png" id="9_fo3dq"]
 [ext_resource type="Texture2D" uid="uid://d3oq4kdalhltn" path="res://Sprites/Characters/Clive Right/Cliverun2.png" id="10_dg5uc"]
@@ -41,10 +36,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_6pc45")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ck4by")
+"texture": null
 }],
 "loop": true,
 "name": &"idle",
@@ -52,13 +47,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_odddf")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_hsxgc")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_y5u4i")
+"texture": null
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_o8kh2")
@@ -133,7 +128,7 @@ shape = SubResource("CapsuleShape2D_ya6wj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-7.62939e-06, -9.53674e-07)
 sprite_frames = SubResource("SpriteFrames_4olwm")
-animation = &"fall"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="RayCast_Right" type="RayCast2D" parent="Player"]
