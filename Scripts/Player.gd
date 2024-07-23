@@ -20,8 +20,9 @@ var max_jumps : int = 2 # The max amount of time's the player can jump
 var did_left_jump = false
 var did_right_jump = false
  
-@onready var node = get_tree().get_first_node_in_group("Node")
-@onready var bridge = get_tree().get_first_node_in_group("Bridge")
+@onready var nodes = get_tree().get_nodes_in_group("Node")
+@onready var bridges = get_tree().get_nodes_in_group("Bridge")
+@onready var index = 0
 @onready var state = false
 
 const dash_speed = 900
@@ -107,7 +108,7 @@ func movement_control(delta): # Holds all movement control
 	
 	if Input.is_action_just_pressed("plant_bridge"):
 		state = !state
-		bridge.visible = state
+		bridges[0].visible = state
 		
 		
 	if global_position.y > bottom_bound: #Game over if below bottom bound
