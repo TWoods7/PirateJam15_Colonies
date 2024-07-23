@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddd4d8x6xj60c"]
+[gd_scene load_steps=9 format=3 uid="uid://ddd4d8x6xj60c"]
 
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Sprites/Tiles/tiles_packed.png" id="1_dndhn"]
 [ext_resource type="PackedScene" uid="uid://cu4xs0tjgwrqn" path="res://Scenes/Player.tscn" id="2_gnx1k"]
-[ext_resource type="PackedScene" uid="uid://cpse5686m6odh" path="res://Scenes/Bridge_Node.tscn" id="3_dwg6p"]
-[ext_resource type="PackedScene" uid="uid://cnvlitfjjpn0r" path="res://Scenes/Bridge.tscn" id="4_fpi4x"]
+[ext_resource type="Texture2D" uid="uid://cmuj56kflday4" path="res://Sprites/Characters/character_0025.png" id="3_gf8rl"]
+[ext_resource type="Texture2D" uid="uid://dl6g7jve7l1jm" path="res://Sprites/Characters/character_0015.png" id="3_pgdex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_equc1"]
 texture = ExtResource("1_dndhn")
@@ -853,6 +853,13 @@ texture_region_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_equc1")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5top"]
+size = Vector2(16, 16)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_f7evo"]
+a = Vector2(32.1434, -129.398)
+b = Vector2(-18.4355, 108.467)
+
 [node name="Level" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -861,11 +868,41 @@ rendering_quadrant_size = 18
 format = 2
 layer_0/tile_data = PackedInt32Array(1, 131072, 6, 2, 131072, 6, 3, 131072, 6, 4, 131072, 6, 5, 131072, 6, 6, 131072, 6, 7, 131072, 6, 8, 131072, 6, 9, 131072, 6, 10, 131072, 6, 11, 131072, 6, 12, 131072, 6, 65528, 131072, 6, 65529, 131072, 6, 65530, 131072, 6, 65531, 131072, 6, 65532, 131072, 6, 65533, 131072, 6, 65534, 131072, 6, 65535, 131072, 6, 0, 131072, 6, 13, 131072, 6, 14, 131072, 6, 65527, 131072, 6, 65526, 131072, 6, 65525, 131072, 6, 65524, 131072, 6, 65523, 131072, 6, 65522, 131072, 6, 65521, 131072, 6, 65520, 131072, 6, 65519, 131072, 6, 65518, 131072, 6, 65517, 131072, 6, 65516, 131072, 6, -327668, 131072, 6, -393204, 131072, 6, -458740, 131072, 6, -524276, 131072, 6, -589812, 131072, 6, -655348, 131072, 6, -262132, 131072, 6, -262158, 131072, 6, -262157, 131072, 6, -262156, 131072, 6, -262155, 131072, 6, -262154, 131072, 6, -262153, 131072, 6, -262152, 131072, 6, -262151, 131072, 6, -327672, 131072, 6, -393208, 131072, 6, -458744, 131072, 6, -524280, 131072, 6, -589816, 131072, 6, -655352, 131072, 6, -720888, 131072, 6, -196596, 131072, 6, -131060, 131072, 6, -65524, 131072, 6, -655347, 131072, 6, -655346, 131072, 6, -589810, 131072, 6, -524274, 131072, 6, -458738, 131072, 6, -393202, 131072, 6, -327666, 131072, 6, -262130, 131072, 6, -196594, 131072, 6, -196595, 131072, 6, -131059, 131072, 6, -131058, 131072, 6, -65522, 131072, 6, -65523, 131072, 6, -262131, 131072, 6, -327667, 131072, 6, -393203, 131072, 6, -458739, 131072, 6, -524275, 131072, 6, -589811, 131072, 6)
 
-[node name="Player" parent="." groups=["Player"] instance=ExtResource("2_gnx1k")]
+[node name="Bridge" type="Node2D" parent="." groups=["Bridge"]]
+position = Vector2(-104, -90)
+
+[node name="PBridge_1_1" type="Area2D" parent="Bridge"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Bridge/PBridge_1_1"]
+position = Vector2(0, -3)
+texture = ExtResource("3_pgdex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/PBridge_1_1"]
+shape = SubResource("RectangleShape2D_j5top")
+
+[node name="PBridge_1_2" type="Area2D" parent="Bridge"]
+position = Vector2(240, -96)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bridge/PBridge_1_2"]
+position = Vector2(0, -3)
+texture = ExtResource("3_pgdex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/PBridge_1_2"]
+shape = SubResource("RectangleShape2D_j5top")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Bridge"]
+visible = false
+position = Vector2(109, -41)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bridge/StaticBody2D"]
+rotation = 0.950989
+shape = SubResource("SegmentShape2D_f7evo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bridge/StaticBody2D"]
+position = Vector2(14, 4)
+rotation = -0.407979
+scale = Vector2(10.2427, 1.54979)
+texture = ExtResource("3_gf8rl")
+
+[node name="Player" parent="." instance=ExtResource("2_gnx1k")]
 position = Vector2(1, -28)
-
-[node name="Bridge_Node" parent="." groups=["Node"] instance=ExtResource("3_dwg6p")]
-position = Vector2(-102, -91)
-
-[node name="Bridge" parent="." groups=["Bridge"] instance=ExtResource("4_fpi4x")]
-position = Vector2(4, -127)

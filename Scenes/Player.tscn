@@ -133,16 +133,16 @@ shape = SubResource("CapsuleShape2D_ya6wj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-7.62939e-06, -9.53674e-07)
 sprite_frames = SubResource("SpriteFrames_4olwm")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="RayCast_Right" type="RayCast2D" parent="Player"]
 scale = Vector2(10.355, 10.355)
-target_position = Vector2(4.82859, 0)
+target_position = Vector2(3.86287, 0)
 
 [node name="RayCast_Left" type="RayCast2D" parent="Player"]
 scale = Vector2(-10.355, 10.355)
-target_position = Vector2(4.82859, 0)
+target_position = Vector2(3.86287, 0)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(3, 3)

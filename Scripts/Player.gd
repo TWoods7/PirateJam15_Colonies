@@ -19,7 +19,10 @@ var max_jumps : int = 2 # The max amount of time's the player can jump
 @onready var right_ray = $RayCast_Right
 var did_left_jump = false
 var did_right_jump = false
-
+ 
+@onready var node = get_tree().get_first_node_in_group("Node")
+@onready var bridge = get_tree().get_first_node_in_group("Bridge")
+@onready var state = false
 
 const dash_speed = 900
 var is_dashing = false
@@ -101,14 +104,20 @@ func movement_control(delta): # Holds all movement control
 			velocity.y = jump_force #Moves player up
 			jump_count+=1 #Increments jump count by 1 when you have jumped
 			$AnimatedSprite2D.play("jump")
+	
+	if Input.is_action_just_pressed("plant_bridge"):
+		state = !state
+		bridge.visible = state
+		
 		
 	if global_position.y > bottom_bound: #Game over if below bottom bound
 		game_over()
+		
 	move_and_slide()
-	
 
 func _on_dash_timer_timeout():
 	is_dashing = false;
 
 func _on_can_dash_timer_timeout():
 	can_dash = true
+	
