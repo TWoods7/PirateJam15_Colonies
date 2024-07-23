@@ -1,14 +1,26 @@
 extends Path2D
 
-@export var open_path = true #open path is a line, a closed path is a shape, like a circle
-@export var speed = 2
+#can modify these exported variables with each new instance of a moving pltfm
+##open path is a line, a closed path is a shape, like a circle
+@export var is_open_path = true
 
-# Called when the node enters the scene tree for the first time.
+##speed if path is open
+@export var pltfm_speed = 2 
+
+##speed if path is closed
+@export var spd_scale = 1 
+
+@onready var path = $PathFollow2D
+@onready var animation = $AnimationPlayer
+
 func _ready():
-	pass
-	#if open_path:
-		#$AnimationPlayer
+	#if path is open, movement will be as follows:
+	if is_open_path: 
+		animation.play("move")
+		animation.speed_scale = spd_scale
+		#don't call the process function anymore because we're using an animation to move the platform
+		set_process(false) 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	#if path is closed, movement will be as follows:
+	path.progress += pltfm_speed

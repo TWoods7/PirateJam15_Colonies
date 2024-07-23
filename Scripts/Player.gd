@@ -108,7 +108,7 @@ func movement_control(delta): # Holds all movement control
 func game_over(): # Reloads scene when death
 	get_tree().reload_current_scene()
 	
-func move_animation(): # Hold animations for the movement
+func move_animation(): # Holds all animations for the movement
 	var direction = Input.get_axis("left", "right")
 	if direction > 0:
 		animation.flip_h = false
@@ -117,22 +117,15 @@ func move_animation(): # Hold animations for the movement
 	
 	if is_dashing:
 		animation.play("dash")
-		#print("dash")
 	elif velocity.x != 0 and is_on_floor():
 		animation.play("run")
-		#print("run")
 	elif velocity.x == 0 and velocity.y == 0:
 		animation.play("idle")
-		#print("idle")
 	elif velocity.y > 0:
 		animation.play("fall")
-		#print("fall")
 	elif velocity.y < 0 and not is_on_floor():
 		animation.play("jump")
-		#print("jump")
-	
-	
-	
+
 func _on_dash_timer_timeout(): #Stops player from dashing after the timer is up
 	is_dashing = false;
 

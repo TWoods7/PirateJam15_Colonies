@@ -3,16 +3,16 @@
 [ext_resource type="Script" path="res://Scripts/movingPltfm.gd" id="1_a6e48"]
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Sprites/Tiles/tiles_packed.png" id="2_cxi1w"]
 
-[sub_resource type="Curve2D" id="Curve2D_50rjq"]
+[sub_resource type="Curve2D" id="Curve2D_soedb"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 87, -14)
 }
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3lgs"]
 size = Vector2(50, 14)
 
-[sub_resource type="Animation" id="Animation_klcdv"]
+[sub_resource type="Animation" id="Animation_lkntm"]
 resource_name = "move"
 length = 2.0
 loop_mode = 2
@@ -24,12 +24,12 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(-1.55, 1),
+"transitions": PackedFloat32Array(1, -1.55),
 "update": 0,
 "values": [0.0, 1.0]
 }
 
-[sub_resource type="Animation" id="Animation_tjn4w"]
+[sub_resource type="Animation" id="Animation_a6jci"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -44,26 +44,26 @@ tracks/0/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_cy686"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l02xx"]
 _data = {
-"RESET": SubResource("Animation_tjn4w"),
-"move": SubResource("Animation_klcdv")
+"RESET": SubResource("Animation_a6jci"),
+"move": SubResource("Animation_lkntm")
 }
 
-[node name="Path2D" type="Path2D"]
-curve = SubResource("Curve2D_50rjq")
+[node name="movingPltfm" type="Path2D"]
+curve = SubResource("Curve2D_soedb")
 script = ExtResource("1_a6e48")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(4.11149, 0)
-progress = 4.12635
+position = Vector2(38.5707, -5.73158)
+progress = 34.0581
 rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(4.11149, 0)
+position = Vector2(38.5707, -5.73158)
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 texture = ExtResource("2_cxi1w")
@@ -74,7 +74,6 @@ region_rect = Rect2(308, 56, 50, 14)
 shape = SubResource("RectangleShape2D_v3lgs")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-callback_mode_process = 0
 libraries = {
-"": SubResource("AnimationLibrary_cy686")
+"": SubResource("AnimationLibrary_l02xx")
 }

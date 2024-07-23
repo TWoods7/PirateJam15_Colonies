@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddd4d8x6xj60c"]
+[gd_scene load_steps=9 format=3 uid="uid://ddd4d8x6xj60c"]
 
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Sprites/Tiles/tiles_packed.png" id="1_dndhn"]
 [ext_resource type="PackedScene" uid="uid://cu4xs0tjgwrqn" path="res://Scenes/Player.tscn" id="2_gnx1k"]
 [ext_resource type="PackedScene" uid="uid://cpse5686m6odh" path="res://Scenes/Bridge_Node.tscn" id="3_dwg6p"]
 [ext_resource type="PackedScene" uid="uid://cnvlitfjjpn0r" path="res://Scenes/Bridge.tscn" id="4_fpi4x"]
+[ext_resource type="PackedScene" uid="uid://cu3phblrub62l" path="res://Scenes/movingPltfm.tscn" id="5_8bfim"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_equc1"]
 texture = ExtResource("1_dndhn")
@@ -853,6 +854,12 @@ texture_region_size = Vector2i(18, 18)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_equc1")
 
+[sub_resource type="Curve2D" id="Curve2D_i6m6d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -21, 30, 0, 0, 0, 0, 43, -35, 0, 0, 0, 0, 112, 31, 0, 0, 0, 0, 173, -33)
+}
+point_count = 4
+
 [node name="Level" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -878,3 +885,7 @@ position = Vector2(507, -170)
 [node name="Bridge2" parent="." groups=["Bridge"] instance=ExtResource("4_fpi4x")]
 position = Vector2(584, -158)
 scale = Vector2(3.68782, 1.88052)
+
+[node name="movingPltfm" parent="." instance=ExtResource("5_8bfim")]
+position = Vector2(-212, -174)
+curve = SubResource("Curve2D_i6m6d")
