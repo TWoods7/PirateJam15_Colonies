@@ -82,29 +82,19 @@ func movement_control(delta): # Holds all movement control
 	if Input.is_key_pressed(KEY_LEFT): # Check if player pressed left key
 		if is_dashing:
 			velocity.x = direction * dash_speed # Moves player left faster
-		else: 
-			velocity.x = direction * player_speed # Moves the player left normally
-		if is_on_floor and is_dashing:
-			$AnimatedSprite2D.play("run") # Plays run animation if on floor
-			velocity.x = direction * dash_speed
 			$AnimatedSprite2D.play("dash")
-		else:
-			velocity.x = direction * player_speed # Moves the player left
-			$AnimatedSprite2D.play("run")
+		elif is_on_floor: 
+			velocity.x = direction * player_speed # Moves the player left normally
+			$AnimatedSprite2D.play("run") # Plays run animation if on floor
 	elif Input.is_key_pressed(KEY_RIGHT): # Check if player pressed right key
 		if is_dashing:
 			velocity.x = direction * dash_speed # Moves player right faster
-		else:
-			velocity.x = direction * player_speed # Moves the player right normally
-		if is_on_floor and is_dashing:
-			$AnimatedSprite2D.play("run") # Plays run animation if on floor
-			velocity.x = direction * dash_speed
 			$AnimatedSprite2D.play("dash")
 		elif is_on_floor:
-			velocity.x = direction * player_speed # Moves the player left
-			$AnimatedSprite2D.play("run")
+			velocity.x = direction * player_speed # Moves the player right normally
+			$AnimatedSprite2D.play("run") # Plays run animation if on floor
 	else: 
-		velocity.x = 0 # stops player of they aren't trying to move
+		velocity.x = 0 # stops player if they aren't trying to move
 	
 	if jump_count < max_jumps: #Checks if the player has jumped the max amount of time or not
 		if Input.is_action_just_pressed("ui_accept"): #Checks if space was just pressed
