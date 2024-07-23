@@ -1,9 +1,12 @@
-[gd_scene load_steps=24 format=3 uid="uid://cu4xs0tjgwrqn"]
+[gd_scene load_steps=27 format=3 uid="uid://cu4xs0tjgwrqn"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_m3pgl"]
 [ext_resource type="Texture2D" uid="uid://cjgf3js621jx5" path="res://Sprites/Characters/CliveJumpright/jumping5.png" id="2_lbv48"]
+[ext_resource type="Texture2D" uid="uid://bwh3ynk7cdm1n" path="res://Sprites/Characters/cliveDashRight/dash 1.png" id="2_xm4je"]
 [ext_resource type="Texture2D" uid="uid://dnbapvt5nykbx" path="res://Sprites/Characters/CliveJumpright/jumping6.png" id="3_c46q0"]
+[ext_resource type="Texture2D" uid="uid://1bem832osfjy" path="res://Sprites/Characters/cliveDashRight/dash 2.png" id="3_irec2"]
 [ext_resource type="Texture2D" uid="uid://bhqsjcbc83mul" path="res://Sprites/Characters/cliveIdleRight/idle 1.png" id="4_2inlg"]
+[ext_resource type="Texture2D" uid="uid://bqfjjw1jbeyd8" path="res://Sprites/Characters/cliveDashRight/dash 3.png" id="4_dpdgq"]
 [ext_resource type="Texture2D" uid="uid://b1hdbj6uhdcgi" path="res://Sprites/Characters/cliveIdleRight/idle 2.png" id="5_gvpxl"]
 [ext_resource type="Texture2D" uid="uid://c73l2owpr2lp4" path="res://Sprites/Characters/CliveJumpright/jumping1.png" id="6_00h2x"]
 [ext_resource type="Texture2D" uid="uid://cedgc4q6xmh4q" path="res://Sprites/Characters/CliveJumpright/jumping2.png" id="7_t7l5m"]
@@ -28,6 +31,20 @@ height = 174.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4olwm"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xm4je")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_irec2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dpdgq")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_lbv48")
@@ -133,8 +150,10 @@ shape = SubResource("CapsuleShape2D_ya6wj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-7.62939e-06, -9.53674e-07)
 sprite_frames = SubResource("SpriteFrames_4olwm")
-animation = &"idle"
+animation = &"dash"
 autoplay = "idle"
+frame = 2
+frame_progress = 0.420406
 
 [node name="RayCast_Right" type="RayCast2D" parent="Player"]
 scale = Vector2(10.355, 10.355)
@@ -151,6 +170,7 @@ zoom = Vector2(3, 3)
 wait_time = 0.2
 
 [node name="can_dash_timer" type="Timer" parent="Player"]
+wait_time = 0.3
 
 [connection signal="timeout" from="Player/dash_timer" to="Player" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Player/can_dash_timer" to="Player" method="_on_can_dash_timer_timeout"]
