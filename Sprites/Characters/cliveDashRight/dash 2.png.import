@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxjlqqi4a2opk"
-path="res://.godot/imported/jumping5.png-c324a741d345c288e6c4838f874cc6aa.ctex"
+uid="uid://1bem832osfjy"
+path="res://.godot/imported/dash 2.png-a35ab7425fa0472cdaa30d5851412d76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/CliveJumpleft/jumping5.png"
-dest_files=["res://.godot/imported/jumping5.png-c324a741d345c288e6c4838f874cc6aa.ctex"]
+source_file="res://Sprites/Characters/cliveDashRight/dash 2.png"
+dest_files=["res://.godot/imported/dash 2.png-a35ab7425fa0472cdaa30d5851412d76.ctex"]
 
 [params]
 

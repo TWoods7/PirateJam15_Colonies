@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beiv83a1riclg"
-path="res://.godot/imported/sliding 3.png-36fd260f147b01548c1261f56d64d86b.ctex"
+uid="uid://bwh3ynk7cdm1n"
+path="res://.godot/imported/dash 1.png-18cc2a8f1fc686adeb51a5562d5ee77e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Characters/cliveSlideLeft/sliding 3.png"
-dest_files=["res://.godot/imported/sliding 3.png-36fd260f147b01548c1261f56d64d86b.ctex"]
+source_file="res://Sprites/Characters/cliveDashRight/dash 1.png"
+dest_files=["res://.godot/imported/dash 1.png-18cc2a8f1fc686adeb51a5562d5ee77e.ctex"]
 
 [params]
 

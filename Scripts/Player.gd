@@ -89,17 +89,17 @@ func movement_control(delta): # Holds all movement control
 	if Input.is_key_pressed(KEY_LEFT): # Move left aslong as they didn't just jump right off a wall
 		if is_dashing:
 			velocity.x = direction * dash_speed
-		else: 
+			$AnimatedSprite2D.play("dash")
+		elif is_on_floor:
 			velocity.x = direction * player_speed # Moves the player left
-		if is_on_floor:
 			$AnimatedSprite2D.play("run")
+			
 	elif Input.is_key_pressed(KEY_RIGHT): # Move right aslong as they didn't just jump left off a wall
 		if is_dashing:
 			velocity.x = direction * dash_speed
-
-		else:
+			$AnimatedSprite2D.play("dash")
+		elif is_on_floor:
 			velocity.x = direction * player_speed # Moves the player right
-		if is_on_floor:
 			$AnimatedSprite2D.play("run")
 	else: 
 		velocity.x = 0
