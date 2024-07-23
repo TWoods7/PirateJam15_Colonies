@@ -4,22 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://cmuj56kflday4" path="res://Sprites/Characters/character_0025.png" id="2_0jrdg"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_f7evo"]
-a = Vector2(32.1434, -129.398)
-b = Vector2(-18.4355, 108.467)
+a = Vector2(-20, 0)
+b = Vector2(20, 0)
 
 [node name="Bridge" type="StaticBody2D"]
 visible = false
 script = ExtResource("1_50pir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 0.950989
 shape = SubResource("SegmentShape2D_f7evo")
 disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(14, 4)
-rotation = -0.407979
-scale = Vector2(10.2427, 1.54979)
+position = Vector2(0, 0.5)
+scale = Vector2(-1.6682, 0.390053)
 texture = ExtResource("2_0jrdg")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

@@ -33,6 +33,10 @@ var can_dash = true
 func _physics_process(delta):
 	movement_control(delta)
 	move_animation()
+	if global_position.x > -350 and global_position.x< 250:
+		index = 0
+	if global_position.x > 250:
+		index = 1
 	
 func game_over(): # Reloads scene when death
 	get_tree().reload_current_scene()
@@ -108,7 +112,7 @@ func movement_control(delta): # Holds all movement control
 	
 	if Input.is_action_just_pressed("plant_bridge"):
 		state = !state
-		bridges[0].visible = state
+		bridges[index].visible = state
 		
 		
 	if global_position.y > bottom_bound: #Game over if below bottom bound
