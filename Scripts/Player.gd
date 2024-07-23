@@ -2,7 +2,7 @@ extends CharacterBody2D
 #
 # DO NOT CHANGE A VAR TO A CONST UNLESS A COMMENT SAYS OTHERWISE
 #
-@onready var _animated_sprite = $AnimatedSprite2D
+@onready var animation = $AnimatedSprite2D
 
 const move_speed : float = 200 # Variable that acts as constant so when player_speed is adjusted, the base move_speed still exists
 var player_speed : float # Variable that represents players current speed
@@ -45,7 +45,6 @@ func movement_control(delta): # Holds all movement control
 	
 	if (not is_on_floor() and not is_on_wall()): # Applies gravity if not in floor and not on a wall
 		velocity.y += gravity
-		$AnimatedSprite2D.play("fall")
 	
 	if left_ray.is_colliding() or right_ray.is_colliding(): # Check for if anything is to the left or right of the player and has a collider
 		max_jumps = 1 # Sets jump max to 1
@@ -82,17 +81,13 @@ func movement_control(delta): # Holds all movement control
 	if Input.is_key_pressed(KEY_LEFT): # Check if player pressed left key
 		if is_dashing:
 			velocity.x = direction * dash_speed # Moves player left faster
-			$AnimatedSprite2D.play("dash")
 		elif is_on_floor: 
 			velocity.x = direction * player_speed # Moves the player left normally
-			$AnimatedSprite2D.play("run") # Plays run animation if on floor
 	elif Input.is_key_pressed(KEY_RIGHT): # Check if player pressed right key
 		if is_dashing:
 			velocity.x = direction * dash_speed # Moves player right faster
-			$AnimatedSprite2D.play("dash")
 		elif is_on_floor:
 			velocity.x = direction * player_speed # Moves the player right normally
-			$AnimatedSprite2D.play("run") # Plays run animation if on floor
 	else: 
 		velocity.x = 0 # stops player if they aren't trying to move
 	
@@ -100,7 +95,6 @@ func movement_control(delta): # Holds all movement control
 		if Input.is_action_just_pressed("ui_accept"): #Checks if space was just pressed
 			velocity.y = jump_force #Moves player up
 			jump_count+=1 #Increments jump count by 1 when you have jumped
-			$AnimatedSprite2D.play("jump") #Plays jump animation
 	
 	if Input.is_action_just_pressed("plant_bridge"):
 		state = !state # Flips state to either true or false
@@ -117,13 +111,27 @@ func game_over(): # Reloads scene when death
 func move_animation(): # Hold animations for the movement
 	var direction = Input.get_axis("left", "right")
 	if direction > 0:
-		$AnimatedSprite2D.flip_h = false
+		animation.flip_h = false
 	elif direction < 0:
-		$AnimatedSprite2D.flip_h = true
-	if direction == 0 and is_on_floor():
-		$AnimatedSprite2D.play("idle")
-	if direction != 0 and not is_on_floor():
-		$AnimatedSprite2D.play("fall")
+		animation.flip_h = true
+	
+	if is_dashing:
+		animation.play("dash")
+		#print("dash")
+	elif velocity.x != 0 and is_on_floor():
+		animation.play("run")
+		#print("run")
+	elif velocity.x == 0 and velocity.y == 0:
+		animation.play("idle")
+		#print("idle")
+	elif velocity.y > 0:
+		animation.play("fall")
+		#print("fall")
+	elif velocity.y < 0 and not is_on_floor():
+		animation.play("jump")
+		#print("jump")
+	
+	
 	
 func _on_dash_timer_timeout(): #Stops player from dashing after the timer is up
 	is_dashing = false;
