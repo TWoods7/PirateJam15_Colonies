@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddd4d8x6xj60c"]
+[gd_scene load_steps=17 format=3 uid="uid://ddd4d8x6xj60c"]
 
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Sprites/Tiles/tiles_packed.png" id="1_dndhn"]
 [ext_resource type="PackedScene" uid="uid://cu4xs0tjgwrqn" path="res://Scenes/Player.tscn" id="2_gnx1k"]
 [ext_resource type="PackedScene" uid="uid://cpse5686m6odh" path="res://Scenes/Bridge_Node.tscn" id="3_dwg6p"]
 [ext_resource type="PackedScene" uid="uid://cnvlitfjjpn0r" path="res://Scenes/Bridge.tscn" id="4_fpi4x"]
 [ext_resource type="PackedScene" path="res://Scenes/Moving_Pltfm.tscn" id="5_8bfim"]
+[ext_resource type="Script" path="res://Scenes/Breakingplayform.gd" id="6_mrkm5"]
+[ext_resource type="Texture2D" uid="uid://dg5d84sjqy2fm" path="res://Sprites/Tiles/breakingplatform1.png" id="6_yrsc4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_equc1"]
 texture = ExtResource("1_dndhn")
@@ -860,6 +862,67 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cucr2"]
+size = Vector2(28, 2.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebab0"]
+size = Vector2(30, 13)
+
+[sub_resource type="Animation" id="Animation_qrst6"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ueh7p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_yg5ew"]
+resource_name = "destroy"
+length = 0.70001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u1wvm"]
+_data = {
+"RESET": SubResource("Animation_ueh7p"),
+"destroyed": SubResource("Animation_yg5ew"),
+"idle": SubResource("Animation_qrst6")
+}
+
 [node name="Level" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -889,3 +952,29 @@ scale = Vector2(3.68782, 1.88052)
 [node name="movingPltfm" parent="." instance=ExtResource("5_8bfim")]
 position = Vector2(-212, -174)
 curve = SubResource("Curve2D_i6m6d")
+
+[node name="Breakingplayform" type="Area2D" parent="."]
+script = ExtResource("6_mrkm5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Breakingplayform"]
+position = Vector2(41, -211)
+texture = ExtResource("6_yrsc4")
+hframes = 4
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Breakingplayform"]
+position = Vector2(41, -219)
+shape = SubResource("RectangleShape2D_cucr2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Breakingplayform"]
+position = Vector2(40, -211)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Breakingplayform/StaticBody2D"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_ebab0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Breakingplayform"]
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_u1wvm")
+}
