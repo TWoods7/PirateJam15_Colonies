@@ -4,6 +4,8 @@ extends CharacterBody2D
 #
 @onready var animation = $AnimatedSprite2D
 
+var check = false
+
 const move_speed : float = 200 # Variable that acts as constant so when player_speed is adjusted, the base move_speed still exists
 var player_speed : float # Variable that represents players current speed
 
@@ -103,8 +105,11 @@ func movement_control(delta): # Holds all movement control
 
 	if global_position.y > bottom_bound: #Game over if below bottom bound
 		game_over()
-		
-	move_and_slide()
+	
+	if check == true:
+		move_and_slide()
+	else:
+		check = true
 
 func game_over(): # Reloads scene when death
 	get_tree().reload_current_scene()
