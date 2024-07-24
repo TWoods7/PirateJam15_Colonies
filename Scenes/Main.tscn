@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ddd4d8x6xj60c"]
+[gd_scene load_steps=18 format=3 uid="uid://ddd4d8x6xj60c"]
 
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Sprites/Tiles/tiles_packed.png" id="1_dndhn"]
 [ext_resource type="PackedScene" uid="uid://cu4xs0tjgwrqn" path="res://Scenes/Player.tscn" id="2_gnx1k"]
@@ -885,8 +885,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_yg5ew"]
 resource_name = "destroy"
-length = 0.70001
-step = 2.0
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -894,10 +893,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_qrst6"]
@@ -917,9 +916,26 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_26d1h"]
+resource_name = "destroy"
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 1, 2, 3, 4, 5, 6]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u1wvm"]
 _data = {
 "RESET": SubResource("Animation_ueh7p"),
+"destroy": SubResource("Animation_26d1h"),
 "destroyed": SubResource("Animation_yg5ew"),
 "idle": SubResource("Animation_qrst6")
 }
@@ -955,6 +971,7 @@ position = Vector2(-212, -174)
 curve = SubResource("Curve2D_i6m6d")
 
 [node name="Breakingplayform" type="Area2D" parent="."]
+position = Vector2(16, 175)
 script = ExtResource("6_mrkm5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Breakingplayform"]
@@ -979,5 +996,3 @@ callback_mode_process = 0
 libraries = {
 "": SubResource("AnimationLibrary_u1wvm")
 }
-
-[connection signal="body_entered" from="Breakingplayform" to="Breakingplayform" method="_on_body_entered"]

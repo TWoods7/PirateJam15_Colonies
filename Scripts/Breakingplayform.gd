@@ -10,7 +10,7 @@ func _physics_process(_delta):
 	for body in bodies:
 		if body.name == "Player":
 			$AnimationPlayer.play("idle")
-			$AnimationPlayer.play("destroyed")
-			queue_free()
+			$AnimationPlayer.play("destroy")
+			call_deferred("queue_free")
 		else:
 			$AnimationPlayer.play("idle")
