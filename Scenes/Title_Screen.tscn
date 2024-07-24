@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://dv8e010v6wxh6"]
+[gd_scene load_steps=10 format=3 uid="uid://dv8e010v6wxh6"]
 
 [ext_resource type="Texture2D" uid="uid://dlb40y5fl4c5g" path="res://Sprites/title screen/Background.png" id="1_x1beh"]
 [ext_resource type="Texture2D" uid="uid://gsf3l1al60g" path="res://Sprites/title screen/title.png" id="2_ktg0a"]
-[ext_resource type="Script" path="res://Scenes/start_button.gd" id="3_fpam1"]
+[ext_resource type="Script" path="res://Scripts/start_button.gd" id="3_fpam1"]
 [ext_resource type="FontFile" uid="uid://c82ei6t21k4k6" path="res://fonts/PixeloidSans.ttf" id="3_pklx5"]
-[ext_resource type="Script" path="res://Scenes/options_button.gd" id="5_xbkr7"]
-[ext_resource type="Script" path="res://Scenes/credits_button.gd" id="7_vsf3d"]
+[ext_resource type="Script" path="res://Scripts/options_button.gd" id="5_xbkr7"]
+[ext_resource type="Script" path="res://Scripts/credits_button.gd" id="7_vsf3d"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yor6a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urkpn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsscb"]
 
@@ -69,10 +71,12 @@ offset_right = 645.0
 offset_bottom = 367.0
 theme_override_fonts/font = ExtResource("3_pklx5")
 theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_urkpn")
 text = "OPTIONS"
 script = ExtResource("5_xbkr7")
 
 [node name="credits_button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 438.0
 offset_top = 379.0
 offset_right = 638.0
