@@ -40,6 +40,7 @@ func _physics_process(delta):
 		index = 1
 	#----------------------------------------------------------------------------------#
 
+@warning_ignore("unused_parameter")
 func movement_control(delta): # Holds all movement control
 	var direction = Input.get_axis("left", "right")
 	
