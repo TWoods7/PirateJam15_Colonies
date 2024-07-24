@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cu4xs0tjgwrqn" path="res://Scenes/Player.tscn" id="2_gnx1k"]
 [ext_resource type="PackedScene" uid="uid://cpse5686m6odh" path="res://Scenes/Bridge_Node.tscn" id="3_dwg6p"]
 [ext_resource type="PackedScene" uid="uid://cnvlitfjjpn0r" path="res://Scenes/Bridge.tscn" id="4_fpi4x"]
-[ext_resource type="PackedScene" uid="uid://cu3phblrub62l" path="res://Scenes/Moving_Pltfm.tscn" id="5_8bfim"]
+[ext_resource type="PackedScene" path="res://Scenes/Moving_Pltfm.tscn" id="5_8bfim"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_equc1"]
 texture = ExtResource("1_dndhn")
