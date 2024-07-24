@@ -976,20 +976,19 @@ position = Vector2(16, 175)
 script = ExtResource("6_mrkm5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Breakingplayform"]
-position = Vector2(41, -211)
+position = Vector2(65, -271)
 texture = ExtResource("6_yrsc4")
 hframes = 4
 vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakingplayform"]
-position = Vector2(41, -219)
+position = Vector2(65, -280)
 shape = SubResource("RectangleShape2D_cucr2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Breakingplayform"]
-position = Vector2(40, -211)
+position = Vector2(64, -272)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Breakingplayform/StaticBody2D"]
-position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_ebab0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Breakingplayform"]
@@ -999,3 +998,4 @@ libraries = {
 }
 
 [node name="breaking_pltm" parent="." instance=ExtResource("8_lp20u")]
+position = Vector2(45, -36)

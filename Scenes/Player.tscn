@@ -150,7 +150,7 @@ shape = SubResource("CapsuleShape2D_ya6wj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-7.62939e-06, -9.53674e-07)
 sprite_frames = SubResource("SpriteFrames_4olwm")
-animation = &"dash"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="RayCast_Right" type="RayCast2D" parent="Player"]
