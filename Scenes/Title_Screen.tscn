@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dv8e010v6wxh6"]
+[gd_scene load_steps=12 format=3 uid="uid://1k0dios233da"]
 
 [ext_resource type="Texture2D" uid="uid://dlb40y5fl4c5g" path="res://Sprites/title screen/Background.png" id="1_x1beh"]
 [ext_resource type="Texture2D" uid="uid://gsf3l1al60g" path="res://Sprites/title screen/title.png" id="2_ktg0a"]
 [ext_resource type="Script" path="res://Scripts/start_button.gd" id="3_fpam1"]
 [ext_resource type="FontFile" uid="uid://c82ei6t21k4k6" path="res://fonts/PixeloidSans.ttf" id="3_pklx5"]
+[ext_resource type="AudioStream" uid="uid://ci3ts02utgdng" path="res://Audio/SFX/select_option.ogg" id="5_1yt3n"]
 [ext_resource type="Script" path="res://Scripts/options_button.gd" id="5_xbkr7"]
 [ext_resource type="Script" path="res://Scripts/credits_button.gd" id="7_vsf3d"]
+[ext_resource type="AudioStream" uid="uid://dh2hnd3eft2at" path="res://Audio/Music/Homunculus.mp3" id="8_kj4g5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yor6a"]
 
@@ -63,6 +65,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_yor6a")
 text = "START"
 script = ExtResource("3_fpam1")
 
+[node name="Hover" type="AudioStreamPlayer" parent="start_button"]
+stream = ExtResource("5_1yt3n")
+bus = &"SFX"
+
 [node name="options_button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 432.0
@@ -74,6 +80,10 @@ theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxEmpty_urkpn")
 text = "OPTIONS"
 script = ExtResource("5_xbkr7")
+
+[node name="Hover2" type="AudioStreamPlayer" parent="options_button"]
+stream = ExtResource("5_1yt3n")
+bus = &"SFX"
 
 [node name="credits_button" type="Button" parent="."]
 layout_mode = 0
@@ -87,6 +97,19 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_nsscb")
 text = "CREDITS"
 script = ExtResource("7_vsf3d")
 
+[node name="Hover3" type="AudioStreamPlayer" parent="credits_button"]
+stream = ExtResource("5_1yt3n")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_kj4g5")
+volume_db = -10.511
+autoplay = true
+bus = &"Music"
+
+[connection signal="mouse_entered" from="start_button" to="start_button" method="_on_mouse_entered"]
 [connection signal="pressed" from="start_button" to="start_button" method="_on_pressed"]
+[connection signal="mouse_entered" from="options_button" to="options_button" method="_on_mouse_entered"]
 [connection signal="pressed" from="options_button" to="options_button" method="_on_pressed"]
+[connection signal="mouse_entered" from="credits_button" to="credits_button" method="_on_mouse_entered"]
 [connection signal="pressed" from="credits_button" to="credits_button" method="_on_pressed"]

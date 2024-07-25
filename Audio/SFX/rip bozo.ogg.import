@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ci3x5k1ed3wcy"
+path="res://.godot/imported/rip bozo.ogg-17e7bcf1a72555d3fb6394081128d631.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/rip bozo.ogg"
+dest_files=["res://.godot/imported/rip bozo.ogg-17e7bcf1a72555d3fb6394081128d631.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
