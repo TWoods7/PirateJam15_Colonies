@@ -4,9 +4,6 @@ extends CharacterBody2D
 #
 @onready var animation = $AnimatedSprite2D
 
-#@onready var starting_position = Vector2(77, -85)
-#@onready var bottom_bound = 100
-
 var check = false
 
 const move_speed : float = 200 # Variable that acts as constant so when player_speed is adjusted, the base move_speed still exists
@@ -32,6 +29,9 @@ var state = false # Used for flipping the bridges visibilty and collision
 const dash_speed = 900 #Speed for when you/re dashing
 var is_dashing = false #check for if the player is currently dashing
 var can_dash = true #Check for if cooldown is over and the player can dash
+
+@onready var jump_audio = $jump_audio
+@onready var dash_audio = $dash_audio
 
 # func that's called every frame
 func _physics_process(delta):
@@ -78,10 +78,11 @@ func movement_control(delta): # Holds all movement control
 		
 	#-- Check for if player tried to dash and can dash --#
 	if Input.is_action_just_pressed("dash") and can_dash: 
-		is_dashing = true # sStates player is dashing
+		is_dashing = true # States player is dashing
 		can_dash = false # States they can't dash
 		$dash_timer.start() # Starts timer for the player's dash
 		$can_dash_timer.start() # Starts timer for cooldown
+		$dash_audio.play()
 	#----------------------------------------------------#
 	
 	if Input.is_key_pressed(KEY_LEFT): # Check if player pressed left key
@@ -104,6 +105,7 @@ func movement_control(delta): # Holds all movement control
 		if Input.is_action_just_pressed("ui_accept"): #Checks if space was just pressed
 			velocity.y = jump_force #Moves player up
 			jump_count+=1 #Increments jump count by 1 when you have jumped
+			jump_audio.play()
 	
 	if Input.is_action_just_pressed("plant_bridge"):
 		if bridges.is_empty() and nodes.is_empty():

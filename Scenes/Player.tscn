@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cu4xs0tjgwrqn"]
+[gd_scene load_steps=29 format=3 uid="uid://cu4xs0tjgwrqn"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_m3pgl"]
 [ext_resource type="Texture2D" uid="uid://cjgf3js621jx5" path="res://Sprites/Characters/CliveJumpright/jumping5.png" id="2_lbv48"]
@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://dgj1p57jje81x" path="res://Sprites/Characters/cliveWallhangRight/wall hang right 1.png" id="19_m346q"]
 [ext_resource type="Texture2D" uid="uid://dlae7bem70foh" path="res://Sprites/Characters/cliveWallhangRight/wall hang right 2.png" id="20_nq5eh"]
 [ext_resource type="Texture2D" uid="uid://covb7efpu15ok" path="res://Sprites/Characters/cliveWallhangRight/wall hang right 3.png" id="21_anr8e"]
+[ext_resource type="AudioStream" uid="uid://c2dtiirlfcgix" path="res://Audio/SFX/jump.ogg" id="25_vijul"]
+[ext_resource type="AudioStream" uid="uid://ddo4oebc2pe66" path="res://Audio/SFX/dash.ogg" id="26_23hsm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ya6wj"]
 radius = 37.0
@@ -170,3 +172,16 @@ wait_time = 0.2
 
 [node name="can_dash_timer" type="Timer" parent="."]
 wait_time = 0.3
+
+[node name="jump_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_vijul")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="dash_audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_23hsm")
+volume_db = 2.0
+bus = &"SFX"
+
+[connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="can_dash_timer" to="." method="_on_can_dash_timer_timeout"]

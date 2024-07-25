@@ -7,4 +7,4 @@ func _on_pressed():
 
 
 func _on_mouse_entered():
-	$Hover.play()
+	$"../Hover".play()

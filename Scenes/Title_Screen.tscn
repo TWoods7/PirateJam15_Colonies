@@ -34,14 +34,25 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_x1beh")
 
-[node name="title_label" type="Label" parent="."]
-layout_mode = 2
-offset_left = 260.0
-offset_top = 89.0
-offset_right = 828.0
-offset_bottom = 112.0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.145
+anchor_right = 0.5
+anchor_bottom = 0.145
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
 
-[node name="TextureRect" type="TextureRect" parent="title_label"]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="title_label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/title_label"]
 layout_mode = 2
 anchor_left = 0.5
 anchor_top = 3.391
@@ -53,53 +64,50 @@ offset_right = 284.0
 offset_bottom = 36.007
 texture = ExtResource("2_ktg0a")
 
-[node name="start_button" type="Button" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = -86.5
+offset_right = 102.5
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-offset_left = 465.0
-offset_top = 243.0
-offset_right = 615.0
-offset_bottom = 298.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="start_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("3_pklx5")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yor6a")
 text = "START"
 script = ExtResource("3_fpam1")
 
-[node name="Hover" type="AudioStreamPlayer" parent="start_button"]
-stream = ExtResource("5_1yt3n")
-bus = &"SFX"
-
-[node name="options_button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 432.0
-offset_top = 304.0
-offset_right = 645.0
-offset_bottom = 367.0
+[node name="options_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("3_pklx5")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxEmpty_urkpn")
 text = "OPTIONS"
 script = ExtResource("5_xbkr7")
 
-[node name="Hover2" type="AudioStreamPlayer" parent="options_button"]
-stream = ExtResource("5_1yt3n")
-bus = &"SFX"
-
-[node name="credits_button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 438.0
-offset_top = 379.0
-offset_right = 638.0
-offset_bottom = 434.0
+[node name="credits_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("3_pklx5")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxEmpty_nsscb")
 text = "CREDITS"
 script = ExtResource("7_vsf3d")
-
-[node name="Hover3" type="AudioStreamPlayer" parent="credits_button"]
-stream = ExtResource("5_1yt3n")
-bus = &"SFX"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_kj4g5")
@@ -107,9 +115,13 @@ volume_db = -10.511
 autoplay = true
 bus = &"Music"
 
-[connection signal="mouse_entered" from="start_button" to="start_button" method="_on_mouse_entered"]
-[connection signal="pressed" from="start_button" to="start_button" method="_on_pressed"]
-[connection signal="mouse_entered" from="options_button" to="options_button" method="_on_mouse_entered"]
-[connection signal="pressed" from="options_button" to="options_button" method="_on_pressed"]
-[connection signal="mouse_entered" from="credits_button" to="credits_button" method="_on_mouse_entered"]
-[connection signal="pressed" from="credits_button" to="credits_button" method="_on_pressed"]
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_1yt3n")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/start_button" to="MarginContainer/HBoxContainer/VBoxContainer/start_button" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_button" to="MarginContainer/HBoxContainer/VBoxContainer/start_button" method="_on_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/options_button" to="MarginContainer/HBoxContainer/VBoxContainer/options_button" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/options_button" to="MarginContainer/HBoxContainer/VBoxContainer/options_button" method="_on_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/credits_button" to="MarginContainer/HBoxContainer/VBoxContainer/credits_button" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/credits_button" to="MarginContainer/HBoxContainer/VBoxContainer/credits_button" method="_on_pressed"]

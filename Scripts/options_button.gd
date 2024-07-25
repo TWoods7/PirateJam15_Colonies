@@ -1,12 +1,7 @@
 extends Button
 
-
-
 func _on_pressed():
 	print("options pressed")
 
-
-
-
 func _on_mouse_entered():
-	$Hover2.play()
+	$"../Hover".play()
