@@ -137,38 +137,36 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Player" type="Node2D"]
-
-[node name="Player" type="CharacterBody2D" parent="."]
-scale = Vector2(0.2, 0.2)
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_m3pgl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, -3)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.6)
+scale = Vector2(0.2, 0.2)
 shape = SubResource("CapsuleShape2D_ya6wj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(-7.62939e-06, -9.53674e-07)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.52588e-06, -1.90735e-07)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_4olwm")
 animation = &"jump"
 autoplay = "idle"
 
-[node name="RayCast_Right" type="RayCast2D" parent="Player"]
-scale = Vector2(10.355, 10.355)
+[node name="RayCast_Right" type="RayCast2D" parent="."]
+scale = Vector2(2.071, 2.071)
 target_position = Vector2(3.86287, 0)
 
-[node name="RayCast_Left" type="RayCast2D" parent="Player"]
-scale = Vector2(-10.355, 10.355)
+[node name="RayCast_Left" type="RayCast2D" parent="."]
+rotation = 3.14159
+scale = Vector2(2.071, -2.071)
 target_position = Vector2(3.86287, 0)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.2, 0.2)
 zoom = Vector2(3, 3)
 
-[node name="dash_timer" type="Timer" parent="Player"]
+[node name="dash_timer" type="Timer" parent="."]
 wait_time = 0.2
 
-[node name="can_dash_timer" type="Timer" parent="Player"]
+[node name="can_dash_timer" type="Timer" parent="."]
 wait_time = 0.3
-
-[connection signal="timeout" from="Player/dash_timer" to="Player" method="_on_dash_timer_timeout"]
-[connection signal="timeout" from="Player/can_dash_timer" to="Player" method="_on_can_dash_timer_timeout"]

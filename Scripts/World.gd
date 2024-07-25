@@ -2,6 +2,7 @@ extends Node2D
 @onready var player = $Player
 @onready var bottom_bound = 100
 @onready var starting_spawn = $Starting_Spawn
+var starting_position = Vector2(77, -85)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if Checkpoints.spawn:
@@ -11,11 +12,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(player.global_position)
+	#print(player.global_position)
 	if player.global_position.y > bottom_bound: #Game over if below bottom bound
+		
 		game_over()
 	
 func game_over(): # Teleports player to start or a checkpoint
+	#player.position = starting_position
+	print("game over")
 	if Checkpoints.spawn:
 		player.global_position = Checkpoints.spawn
 	else:

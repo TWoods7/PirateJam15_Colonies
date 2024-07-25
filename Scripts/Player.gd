@@ -4,6 +4,9 @@ extends CharacterBody2D
 #
 @onready var animation = $AnimatedSprite2D
 
+#@onready var starting_position = Vector2(77, -85)
+#@onready var bottom_bound = 100
+
 var check = false
 
 const move_speed : float = 200 # Variable that acts as constant so when player_speed is adjusted, the base move_speed still exists
@@ -26,13 +29,13 @@ var did_right_jump = false # Check for if player just jumped to the right
 var index = 0 # Index for accessing different set of bridges and their nodes
 var state = false # Used for flipping the bridges visibilty and collision
 
-const dash_speed = 900 #Speed for when your dashing
+const dash_speed = 900 #Speed for when you/re dashing
 var is_dashing = false #check for if the player is currently dashing
 var can_dash = true #Check for if cooldown is over and the player can dash
 
 # func that's called every frame
 func _physics_process(delta):
-	print(global_position)
+	#print(global_position)
 	movement_control(delta)
 	move_animation()
 	#-- Breaks level into seperate areas where the plant bridge you change is decided--#

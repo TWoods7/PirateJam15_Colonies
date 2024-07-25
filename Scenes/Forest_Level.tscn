@@ -5592,7 +5592,7 @@ layer_4/name = "Tree 3"
 layer_4/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("6_a8i40")]
-position = Vector2(77, -91)
+position = Vector2(77, -85)
 
 [node name="Starting_Spawn" type="Marker2D" parent="."]
 position = Vector2(77, -91)
