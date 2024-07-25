@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3dvfggcndutq"]
 
-[ext_resource type="Script" path="res://checkpointfirst.gd" id="1_47ige"]
+[ext_resource type="Script" path="res://Scripts/checkpointfirst.gd" id="1_47ige"]
 [ext_resource type="Texture2D" uid="uid://b6uk5yah7vtj8" path="res://Sprites/Objects/tile_0044.png" id="1_knoyy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7oaqt"]
