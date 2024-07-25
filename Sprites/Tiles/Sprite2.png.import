@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg5d84sjqy2fm"
-path="res://.godot/imported/breakingplatform1.png-d1351cebd86a015504ee1898702229fc.ctex"
+uid="uid://b01etde2fq01j"
+path="res://.godot/imported/Sprite2.png-51d89e8025b0d6b6eecb534a4adc45cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tiles/breakingplatform1.png"
-dest_files=["res://.godot/imported/breakingplatform1.png-d1351cebd86a015504ee1898702229fc.ctex"]
+source_file="res://Sprites/Tiles/Sprite2.png"
+dest_files=["res://.godot/imported/Sprite2.png-51d89e8025b0d6b6eecb534a4adc45cf.ctex"]
 
 [params]
 

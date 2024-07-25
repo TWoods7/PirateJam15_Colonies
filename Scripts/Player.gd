@@ -94,6 +94,9 @@ func movement_control(delta): # Holds all movement control
 	else: 
 		velocity.x = 0 # stops player if they aren't trying to move
 	
+	if Input.is_key_pressed(KEY_DOWN) and is_on_floor():
+		position.y += 1
+	
 	if jump_count < max_jumps: #Checks if the player has jumped the max amount of time or not
 		if Input.is_action_just_pressed("ui_accept"): #Checks if space was just pressed
 			velocity.y = jump_force #Moves player up
@@ -137,4 +140,3 @@ func _on_dash_timer_timeout(): #Stops player from dashing after the timer is up
 
 func _on_can_dash_timer_timeout(): # Allows the player to dash after the cooldown is up
 	can_dash = true
-	

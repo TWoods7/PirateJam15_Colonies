@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://boa8r0y883kop"]
 
-[ext_resource type="Script" path="res://Scripts/breaking_pltm.gd" id="1_cpgtc"]
-[ext_resource type="Texture2D" uid="uid://dg5d84sjqy2fm" path="res://Sprites/Tiles/breakingplatform1.png" id="2_1evtg"]
+[ext_resource type="Script" path="res://Scripts/Breaking_Pltm.gd" id="1_cpgtc"]
+[ext_resource type="Texture2D" uid="uid://c8yv6wyx3pbmo" path="res://Sprites/Tiles/breakingwall.png" id="2_u1oca"]
 
 [sub_resource type="Animation" id="Animation_t7d0c"]
 length = 0.001
@@ -65,9 +65,8 @@ size = Vector2(32, 1)
 script = ExtResource("1_cpgtc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1evtg")
-hframes = 4
-vframes = 2
+texture = ExtResource("2_u1oca")
+hframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
