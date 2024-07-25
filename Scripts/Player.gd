@@ -12,7 +12,6 @@ var player_speed : float # Variable that represents players current speed
 const gravity : float = 15 # The gravity var
 
 var jump_force : float = -300  # How powerful the jump is (could be a const)
-var bottom_bound : int = 150 # How many pixels down the death barrier is
 
 var jump_count : int = 0 # How many time the player has jumped 
 var max_jumps : int = 2 # The max amount of time's the player can jump
@@ -33,6 +32,7 @@ var can_dash = true #Check for if cooldown is over and the player can dash
 
 # func that's called every frame
 func _physics_process(delta):
+	print(global_position)
 	movement_control(delta)
 	move_animation()
 	#-- Breaks level into seperate areas where the plant bridge you change is decided--#
@@ -103,19 +103,16 @@ func movement_control(delta): # Holds all movement control
 			jump_count+=1 #Increments jump count by 1 when you have jumped
 	
 	if Input.is_action_just_pressed("plant_bridge"):
-		state = !state # Flips state to either true or false
-		bridges[index].visible = state #Makes the specific bridge in the array be either visible or !visible
-
-	if global_position.y > bottom_bound: #Game over if below bottom bound
-		game_over()
+		if bridges.is_empty() and nodes.is_empty():
+			pass
+		else:
+			state = !state # Flips state to either true or false
+			bridges[index].visible = state #Makes the specific bridge in the array be either visible or !visible
 	
 	if check == true:
 		move_and_slide()
 	else:
 		check = true
-
-func game_over(): # Reloads scene when death
-	get_tree().reload_current_scene()
 	
 func move_animation(): # Holds all animations for the movement
 	var direction = Input.get_axis("left", "right")

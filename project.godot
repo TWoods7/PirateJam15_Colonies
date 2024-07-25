@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 [autoload]
 
 Checkpoint="*res://Scripts/checkpoint.gd"
+Checkpoints="*res://Scripts/checkpoints.gd"
 
 [dotnet]
 

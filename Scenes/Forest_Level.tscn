@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://3coklqvavtqo"]
+[gd_scene load_steps=14 format=3 uid="uid://3coklqvavtqo"]
 
 [ext_resource type="Texture2D" uid="uid://c1i64g8wgq5c3" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="1_kx3dq"]
+[ext_resource type="Script" path="res://Scripts/World.gd" id="1_qsa45"]
 [ext_resource type="Texture2D" uid="uid://cy25h2p3nlkp4" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Hive.png" id="2_rhtwg"]
 [ext_resource type="Texture2D" uid="uid://cvbvhbtuh6jyt" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="3_ks8to"]
 [ext_resource type="Texture2D" uid="uid://bah3g4sqffg3i" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="4_2855m"]
@@ -5572,6 +5573,7 @@ sources/3 = SubResource("TileSetAtlasSource_ppqxj")
 sources/4 = SubResource("TileSetAtlasSource_mrduq")
 
 [node name="ForestLevel" type="Node2D"]
+script = ExtResource("1_qsa45")
 metadata/_edit_vertical_guides_ = [-1126.0]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -5590,4 +5592,7 @@ layer_4/name = "Tree 3"
 layer_4/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("6_a8i40")]
+position = Vector2(77, -91)
+
+[node name="Starting_Spawn" type="Marker2D" parent="."]
 position = Vector2(77, -91)
