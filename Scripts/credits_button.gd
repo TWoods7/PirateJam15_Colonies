@@ -1,6 +1,6 @@
 extends Button
 
-@onready var audio_player = $AudioStreamPlayer
+
 
 func _on_pressed():
 	print("credits pressed")
