@@ -140,4 +140,3 @@ func _on_dash_timer_timeout(): #Stops player from dashing after the timer is up
 
 func _on_can_dash_timer_timeout(): # Allows the player to dash after the cooldown is up
 	can_dash = true
-	
