@@ -5596,7 +5596,7 @@ layer_4/tile_data = PackedInt32Array()
 [node name="Player" parent="." instance=ExtResource("6_a8i40")]
 position = Vector2(77, -85)
 
-[node name="Starting_Spawn" type="Marker2D" parent="."]
+[node name="starting_spawn" type="Marker2D" parent="."]
 position = Vector2(77, -91)
 
 [node name="Checkpoint" parent="." instance=ExtResource("8_jog5k")]

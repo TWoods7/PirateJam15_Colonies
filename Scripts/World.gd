@@ -1,7 +1,7 @@
 extends Node2D
 @onready var player = $Player
 @onready var bottom_bound = 100
-@onready var starting_spawn = $Starting_Spawn
+@onready var starting_spawn = $starting_spawn
 @onready var death_audio = $death_audio
 
 # Called when the node enters the scene tree for the first time.

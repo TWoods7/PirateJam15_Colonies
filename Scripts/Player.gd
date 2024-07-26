@@ -55,7 +55,6 @@ func movement_control(delta): # Holds all movement control
 	if left_ray.is_colliding() or right_ray.is_colliding(): # Check for if anything is to the left or right of the player and has a collider
 		max_jumps = 1 # Sets jump max to 1
 		player_speed = move_speed * .70 # Lowers players speed untill they touch the floor again
-		velocity = Vector2.ZERO # Stops player's momentum when colliding with a wall
 		velocity.y += gravity * 0.4 # Slows gravity's effect on the player when on a wall
 		
 	#-- Check for if the player has jump from a left wall to a right(or vice-versa) used to preventing cheesing the wall jump--#
