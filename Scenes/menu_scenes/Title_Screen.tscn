@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://1k0dios233da"]
+[gd_scene load_steps=16 format=3 uid="uid://1k0dios233da"]
 
 [ext_resource type="Texture2D" uid="uid://dve850y14p5t3" path="res://Sprites/title screen/Background.png" id="1_m0f4q"]
 [ext_resource type="Texture2D" uid="uid://gsf3l1al60g" path="res://Sprites/title screen/title.png" id="2_wxewe"]
@@ -9,9 +9,46 @@
 [ext_resource type="AudioStream" uid="uid://dh2hnd3eft2at" path="res://Audio/Music/Homunculus.mp3" id="7_tnj4h"]
 [ext_resource type="AudioStream" uid="uid://ci3ts02utgdng" path="res://Audio/SFX/select_option.ogg" id="8_h7yro"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yor6a"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4oky"]
+bg_color = Color(0.00153306, 0.219533, 0.805719, 1)
+border_width_bottom = 10
+border_color = Color(0.000341849, 0.0945117, 0.412157, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_offset = Vector2(-3, 3)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_urkpn"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7p01"]
+bg_color = Color(0.000829822, 0.157642, 0.611677, 1)
+border_width_bottom = 10
+border_color = Color(0.000130627, 0.0451674, 0.25798, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_offset = Vector2(-3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwspl"]
+bg_color = Color(0.000339707, 0.0915049, 0.404324, 1)
+border_color = Color(0.000130627, 0.0451674, 0.25798, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_offset = Vector2(-3, 3)
+
+[sub_resource type="Theme" id="Theme_w6anq"]
+Button/styles/hover = SubResource("StyleBoxFlat_x4oky")
+Button/styles/normal = SubResource("StyleBoxFlat_r7p01")
+Button/styles/pressed = SubResource("StyleBoxFlat_mwspl")
+
+[sub_resource type="Theme" id="Theme_gf0qs"]
+Button/styles/hover = SubResource("StyleBoxFlat_x4oky")
+Button/styles/normal = SubResource("StyleBoxFlat_r7p01")
+Button/styles/pressed = SubResource("StyleBoxFlat_mwspl")
+
+[sub_resource type="Theme" id="Theme_s568f"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nsscb"]
 
@@ -66,11 +103,11 @@ texture = ExtResource("2_wxewe")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.55
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.7
 offset_left = -102.5
 offset_top = -86.5
 offset_right = 102.5
@@ -84,25 +121,27 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="start_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_w6anq")
 theme_override_fonts/font = ExtResource("3_1aqb5")
 theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxEmpty_yor6a")
 text = "START"
 script = ExtResource("4_hk4rq")
 
 [node name="options_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_gf0qs")
 theme_override_fonts/font = ExtResource("3_1aqb5")
 theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxEmpty_urkpn")
 text = "OPTIONS"
 script = ExtResource("5_3d6rh")
 
 [node name="credits_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_s568f")
 theme_override_fonts/font = ExtResource("3_1aqb5")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxEmpty_nsscb")

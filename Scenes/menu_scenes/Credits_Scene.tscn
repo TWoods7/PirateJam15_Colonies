@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0gdikilkeqqd"]
+
+[ext_resource type="Texture2D" uid="uid://dve850y14p5t3" path="res://Sprites/title screen/Background.png" id="1_63x3w"]
+[ext_resource type="FontFile" uid="uid://c82ei6t21k4k6" path="res://fonts/PixeloidSans.ttf" id="2_d8xbx"]
+[ext_resource type="Script" path="res://Scripts/menu_scripts/Back_Button.gd" id="4_w03mc"]
+[ext_resource type="AudioStream" uid="uid://dh2hnd3eft2at" path="res://Audio/Music/Homunculus.mp3" id="5_gix6l"]
+[ext_resource type="AudioStream" uid="uid://ci3ts02utgdng" path="res://Audio/SFX/select_option.ogg" id="6_74kqo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4ol2"]
+
+[node name="Options_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -22.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_63x3w")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.145
+anchor_right = 0.5
+anchor_bottom = 0.145
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="title_label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_d8xbx")
+theme_override_font_sizes/font_size = 60
+text = "CREDITS"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.5
+offset_top = -86.5
+offset_right = 102.5
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(510, 0)
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="back_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_d8xbx")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j4ol2")
+text = "BACK"
+script = ExtResource("4_w03mc")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_gix6l")
+volume_db = -10.0
+autoplay = true
+bus = &"MUSIC"
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_74kqo")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/back_button" to="MarginContainer/HBoxContainer/VBoxContainer/back_button" method="_on_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/back_button" to="MarginContainer/HBoxContainer/VBoxContainer/back_button" method="_on_pressed"]
