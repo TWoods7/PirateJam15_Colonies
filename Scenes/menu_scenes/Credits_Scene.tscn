@@ -1,14 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0gdikilkeqqd"]
+[gd_scene load_steps=9 format=3 uid="uid://c0gdikilkeqqd"]
 
 [ext_resource type="Texture2D" uid="uid://dve850y14p5t3" path="res://Sprites/title screen/Background.png" id="1_63x3w"]
 [ext_resource type="FontFile" uid="uid://c82ei6t21k4k6" path="res://fonts/PixeloidSans.ttf" id="2_d8xbx"]
+[ext_resource type="Theme" uid="uid://diyljqya3ytvc" path="res://button_theme.tres" id="3_0jaqb"]
 [ext_resource type="Script" path="res://Scripts/menu_scripts/Back_Button.gd" id="4_w03mc"]
 [ext_resource type="AudioStream" uid="uid://dh2hnd3eft2at" path="res://Audio/Music/Homunculus.mp3" id="5_gix6l"]
 [ext_resource type="AudioStream" uid="uid://ci3ts02utgdng" path="res://Audio/SFX/select_option.ogg" id="6_74kqo"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4ol2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tiqfw"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
-[node name="Options_Screen" type="Control"]
+[sub_resource type="Theme" id="Theme_qjwxe"]
+ScrollContainer/styles/panel = SubResource("StyleBoxFlat_tiqfw")
+
+[node name="Credits_Screen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,15 +42,15 @@ texture = ExtResource("1_63x3w")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.145
 anchor_right = 0.5
-anchor_bottom = 0.145
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+offset_left = -133.5
+offset_top = 50.0
+offset_right = 133.5
+offset_bottom = 124.0
 grow_horizontal = 2
+alignment = 1
 
 [node name="title_label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
@@ -45,35 +58,56 @@ theme_override_fonts/font = ExtResource("2_d8xbx")
 theme_override_font_sizes/font_size = 60
 text = "CREDITS"
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -102.5
-offset_top = -86.5
-offset_right = 102.5
-offset_bottom = 86.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(600, 0)
-layout_mode = 2
+layout_mode = 0
+offset_left = 287.0
+offset_top = 150.0
+offset_right = 888.0
+offset_bottom = 509.0
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(510, 0)
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+theme = SubResource("Theme_qjwxe")
+scroll_horizontal_custom_step = 0.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2/ScrollContainer"]
+custom_minimum_size = Vector2(500, 300)
 layout_mode = 2
 theme_override_constants/separation = 60
 
-[node name="back_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="credits" type="Label" parent="HBoxContainer2/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_d8xbx")
+theme_override_font_sizes/font_size = 30
+text = "testing
+"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -118.0
+offset_right = 100.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="back_button" type="Button" parent="HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_0jaqb")
+theme_override_fonts/font = ExtResource("2_d8xbx")
 theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxEmpty_j4ol2")
 text = "BACK"
 script = ExtResource("4_w03mc")
 
@@ -87,5 +121,5 @@ bus = &"MUSIC"
 stream = ExtResource("6_74kqo")
 bus = &"SFX"
 
-[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/back_button" to="MarginContainer/HBoxContainer/VBoxContainer/back_button" method="_on_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/back_button" to="MarginContainer/HBoxContainer/VBoxContainer/back_button" method="_on_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer3/back_button" to="HBoxContainer3/back_button" method="_on_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer3/back_button" to="HBoxContainer3/back_button" method="_on_pressed"]
