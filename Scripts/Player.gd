@@ -13,7 +13,6 @@ const gravity : float = 15 # The gravity var
 const terminal_velocity : int = 350
 
 var jump_force : float = -300  # How powerful the jump is (could be a const)
-
 var jump_count : int = 0 # How many time the player has jumped 
 var max_jumps : int = 2 # The max amount of time's the player can jump
 
@@ -31,6 +30,11 @@ const dash_speed = 900 #Speed for when you/re dashing
 var is_dashing = false #check for if the player is currently dashing
 var can_dash = true #Check for if cooldown is over and the player can dash
 
+var has_double_jump = true
+var has_dash = true
+var has_bridge = true
+var has_wall_jump = true
+
 @onready var jump_audio = $jump_audio
 @onready var dash_audio = $dash_audio
 
@@ -43,7 +47,7 @@ func _physics_process(delta):
 	if global_position.x > -350 and global_position.x< 250:
 		index = 0
 	if global_position.x > 250:
-		index = 1
+		index = 0
 	#----------------------------------------------------------------------------------#
 
 @warning_ignore("unused_parameter")
@@ -62,11 +66,11 @@ func movement_control(delta): # Holds all movement control
 		velocity.y += gravity * 0.4 # Slows gravity's effect on the player when on a wall
 		
 	#-- Check for if the player has jump from a left wall to a right(or vice-versa) used to preventing cheesing the wall jump--#
-	if left_ray.is_colliding() and !did_right_jump:
+	if left_ray.is_colliding() and !did_right_jump and has_wall_jump:
 		jump_count = 0
 		did_right_jump = true
 		did_left_jump = false
-	if right_ray.is_colliding() and !did_left_jump:
+	if right_ray.is_colliding() and !did_left_jump and has_wall_jump:
 		jump_count = 0
 		did_left_jump = true
 		did_right_jump = false
@@ -75,12 +79,15 @@ func movement_control(delta): # Holds all movement control
 	if is_on_floor():
 		did_left_jump = false # Resets the wall jump checker
 		did_right_jump = false # Resets the wall jump checker
-		max_jumps = 2 # Sets jump max to 2
+		if has_double_jump:
+			max_jumps = 2 # Sets jump max to 2
+		else:
+			max_jumps = 1
 		player_speed = move_speed #Reset player speed to base speed on floor
 		jump_count = 0 # Resets Amount of times jumped
 		
 	#-- Check for if player tried to dash and can dash --#
-	if Input.is_action_just_pressed("dash") and can_dash: 
+	if Input.is_action_just_pressed("dash") and can_dash and has_dash: 
 		is_dashing = true # States player is dashing
 		can_dash = false # States they can't dash
 		$dash_timer.start() # Starts timer for the player's dash
@@ -110,12 +117,15 @@ func movement_control(delta): # Holds all movement control
 			jump_count+=1 #Increments jump count by 1 when you have jumped
 			jump_audio.play()
 	
-	if Input.is_action_just_pressed("plant_bridge"):
+	if Input.is_action_just_pressed("plant_bridge") and has_bridge:
 		if bridges.is_empty() and nodes.is_empty():
 			pass
 		else:
-			state = !state # Flips state to either true or false
-			bridges[index].visible = state #Makes the specific bridge in the array be either visible or !visible
+			if nodes[index].is_on_node:
+				state = !state # Flips state to either true or false
+				bridges[index].visible = state #Makes the specific bridge in the array be either visible or !visible
+			else:
+				pass
 	
 	if check == true:
 		move_and_slide()
