@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://1k0dios233da"]
 
-[ext_resource type="Texture2D" uid="uid://dlb40y5fl4c5g" path="res://Sprites/title screen/Background.png" id="1_m0f4q"]
+[ext_resource type="Texture2D" uid="uid://dve850y14p5t3" path="res://Sprites/title screen/Background.png" id="1_m0f4q"]
 [ext_resource type="Texture2D" uid="uid://gsf3l1al60g" path="res://Sprites/title screen/title.png" id="2_wxewe"]
 [ext_resource type="FontFile" uid="uid://c82ei6t21k4k6" path="res://fonts/PixeloidSans.ttf" id="3_1aqb5"]
 [ext_resource type="Script" path="res://Scripts/menu_scripts/start_button.gd" id="4_hk4rq"]
@@ -111,7 +111,7 @@ script = ExtResource("6_josat")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_tnj4h")
-volume_db = -10.511
+volume_db = -10.0
 autoplay = true
 
 [node name="Hover" type="AudioStreamPlayer" parent="."]
