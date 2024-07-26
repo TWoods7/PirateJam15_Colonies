@@ -180,7 +180,7 @@ bus = &"SFX"
 
 [node name="dash_audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("26_23hsm")
-volume_db = 6.0
+volume_db = 10.0
 bus = &"SFX"
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]

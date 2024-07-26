@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://n76vjnse3fv5"]
+[gd_scene load_steps=7 format=3 uid="uid://n76vjnse3fv5"]
 
 [ext_resource type="Texture2D" uid="uid://dve850y14p5t3" path="res://Sprites/title screen/Background.png" id="1_sv2j4"]
 [ext_resource type="PackedScene" uid="uid://cjfyjdlnrvxrs" path="res://Scenes/menu_scenes/audio_slider.tscn" id="2_uqvjf"]
@@ -6,7 +6,6 @@
 [ext_resource type="Theme" uid="uid://diyljqya3ytvc" path="res://button_theme.tres" id="4_85ftp"]
 [ext_resource type="Script" path="res://Scripts/menu_scripts/Back_Button.gd" id="4_r6mys"]
 [ext_resource type="AudioStream" uid="uid://ci3ts02utgdng" path="res://Audio/SFX/select_option.ogg" id="6_bd0yl"]
-[ext_resource type="AudioStream" uid="uid://dh2hnd3eft2at" path="res://Audio/Music/Homunculus.mp3" id="7_wdnlb"]
 
 [node name="Options_Screen" type="Control"]
 layout_mode = 3
@@ -94,12 +93,6 @@ theme_override_fonts/font = ExtResource("3_e0a8x")
 theme_override_font_sizes/font_size = 45
 text = "BACK"
 script = ExtResource("4_r6mys")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_wdnlb")
-volume_db = -10.0
-autoplay = true
-bus = &"MUSIC"
 
 [node name="Hover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_bd0yl")

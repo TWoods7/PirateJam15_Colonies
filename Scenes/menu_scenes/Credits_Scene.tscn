@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0gdikilkeqqd"]
+[gd_scene load_steps=8 format=3 uid="uid://c0gdikilkeqqd"]
 
 [ext_resource type="Texture2D" uid="uid://dve850y14p5t3" path="res://Sprites/title screen/Background.png" id="1_63x3w"]
 [ext_resource type="FontFile" uid="uid://c82ei6t21k4k6" path="res://fonts/PixeloidSans.ttf" id="2_d8xbx"]
 [ext_resource type="Theme" uid="uid://diyljqya3ytvc" path="res://button_theme.tres" id="3_0jaqb"]
 [ext_resource type="Script" path="res://Scripts/menu_scripts/Back_Button.gd" id="4_w03mc"]
-[ext_resource type="AudioStream" uid="uid://dh2hnd3eft2at" path="res://Audio/Music/Homunculus.mp3" id="5_gix6l"]
 [ext_resource type="AudioStream" uid="uid://ci3ts02utgdng" path="res://Audio/SFX/select_option.ogg" id="6_74kqo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tiqfw"]
@@ -84,7 +83,8 @@ theme_override_constants/separation = 60
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_d8xbx")
 theme_override_font_sizes/font_size = 30
-text = "testing
+text = "enter credits here
+this is a scrolling box
 "
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]
@@ -110,12 +110,6 @@ theme_override_fonts/font = ExtResource("2_d8xbx")
 theme_override_font_sizes/font_size = 45
 text = "BACK"
 script = ExtResource("4_w03mc")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_gix6l")
-volume_db = -10.0
-autoplay = true
-bus = &"MUSIC"
 
 [node name="Hover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_74kqo")

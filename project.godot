@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 
 Checkpoint="*res://Scripts/checkpoints.gd"
 Checkpoints="*res://Scripts/checkpoints.gd"
+MusicController="*res://Scenes/music_controller.tscn"
 
 [dotnet]
 

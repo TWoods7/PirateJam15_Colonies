@@ -10,6 +10,7 @@ const move_speed : float = 200 # Variable that acts as constant so when player_s
 var player_speed : float # Variable that represents players current speed
 
 const gravity : float = 15 # The gravity var
+const terminal_velocity : int = 350
 
 var jump_force : float = -300  # How powerful the jump is (could be a const)
 
@@ -50,7 +51,10 @@ func movement_control(delta): # Holds all movement control
 	var direction = Input.get_axis("left", "right")
 	
 	if (not is_on_floor() and not is_on_wall()): # Applies gravity if not in floor and not on a wall
-		velocity.y += gravity
+		if (velocity.y < terminal_velocity):
+			velocity.y += gravity
+		else:
+			velocity.y = terminal_velocity
 	
 	if left_ray.is_colliding() or right_ray.is_colliding(): # Check for if anything is to the left or right of the player and has a collider
 		max_jumps = 1 # Sets jump max to 1

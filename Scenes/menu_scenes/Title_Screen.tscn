@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://1k0dios233da"]
 
 [ext_resource type="Texture2D" uid="uid://dve850y14p5t3" path="res://Sprites/title screen/Background.png" id="1_m0f4q"]
+[ext_resource type="Script" path="res://Scripts/menu_scripts/Title_Screen.gd" id="1_wgrf6"]
 [ext_resource type="Texture2D" uid="uid://gsf3l1al60g" path="res://Sprites/title screen/title.png" id="2_wxewe"]
 [ext_resource type="FontFile" uid="uid://c82ei6t21k4k6" path="res://fonts/PixeloidSans.ttf" id="3_1aqb5"]
 [ext_resource type="Theme" uid="uid://diyljqya3ytvc" path="res://button_theme.tres" id="3_23emr"]
 [ext_resource type="Script" path="res://Scripts/menu_scripts/start_button.gd" id="4_hk4rq"]
 [ext_resource type="Script" path="res://Scripts/menu_scripts/options_button.gd" id="5_3d6rh"]
 [ext_resource type="Script" path="res://Scripts/menu_scripts/credits_button.gd" id="6_josat"]
-[ext_resource type="AudioStream" uid="uid://dh2hnd3eft2at" path="res://Audio/Music/Homunculus.mp3" id="7_tnj4h"]
 [ext_resource type="AudioStream" uid="uid://ci3ts02utgdng" path="res://Audio/SFX/select_option.ogg" id="8_h7yro"]
 
 [node name="Title_Screen" type="Control"]
@@ -17,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wgrf6")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -105,12 +106,6 @@ theme_override_fonts/font = ExtResource("3_1aqb5")
 theme_override_font_sizes/font_size = 45
 text = "CREDITS"
 script = ExtResource("6_josat")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_tnj4h")
-volume_db = -10.0
-autoplay = true
-bus = &"MUSIC"
 
 [node name="Hover" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_h7yro")
