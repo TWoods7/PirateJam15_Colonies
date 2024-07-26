@@ -175,7 +175,7 @@ wait_time = 0.3
 
 [node name="jump_audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("25_vijul")
-volume_db = -2.0
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="dash_audio" type="AudioStreamPlayer2D" parent="."]
