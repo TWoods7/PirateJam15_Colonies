@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://5swpoisrpc57"]
+
+[ext_resource type="Script" path="res://Scripts/openingtextbox.gd" id="1_o1xm7"]
+[ext_resource type="FontFile" uid="uid://cxfs6c22xw5pe" path="res://fonts/PixeloidSans-Bold.ttf" id="2_5bn4i"]
+[ext_resource type="PackedScene" uid="uid://bb3p5t7oiqqrs" path="res://Scenes/First_screen.tscn" id="2_ibhi8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axf05"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
+[node name="Textbox" type="CanvasLayer"]
+script = ExtResource("1_o1xm7")
+
+[node name="Title_Screen" parent="." instance=ExtResource("2_ibhi8")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.400463
+anchor_right = 0.5
+anchor_bottom = 0.599537
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="TextboxContainer" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -236.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 67
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Panel" type="Panel" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_axf05")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_5bn4i")
+theme_override_font_sizes/font_size = 20
+text = "*"
+
+[node name="Label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_5bn4i")
+theme_override_font_sizes/font_size = 20
+text = "Placeholder text goes here! Placeholder text goes here! Placeholder text goes here! Placeholder text goes here! Placeholder text goes here! Placeholder text goes here! Placeholder text goes here! "
+autowrap_mode = 2
+clip_text = true
+
+[node name="End" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_5bn4i")
+theme_override_font_sizes/font_size = 20
+text = "<"
+
+[node name="Timer" type="Timer" parent="TextboxContainer/MarginContainer/HBoxContainer"]
+wait_time = 1.5
