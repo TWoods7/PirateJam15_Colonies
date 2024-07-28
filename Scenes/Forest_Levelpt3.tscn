@@ -1,18 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://fk6dr82dt8xk"]
+[gd_scene load_steps=16 format=3 uid="uid://ca0fp1pirwg2o"]
 
-[ext_resource type="Script" path="res://Scripts/World.gd" id="1_k4td3"]
-[ext_resource type="PackedScene" uid="uid://cu4xs0tjgwrqn" path="res://Scenes/Player.tscn" id="2_bn7sp"]
-[ext_resource type="Texture2D" uid="uid://c1i64g8wgq5c3" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="3_hknet"]
-[ext_resource type="Texture2D" uid="uid://cy25h2p3nlkp4" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Hive.png" id="4_60xub"]
-[ext_resource type="Texture2D" uid="uid://cvbvhbtuh6jyt" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="5_la0kp"]
-[ext_resource type="Texture2D" uid="uid://bah3g4sqffg3i" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="6_j0rmr"]
-[ext_resource type="Texture2D" uid="uid://q6v0u6yw4jm8" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Backgroundtiles.png" id="7_de6kf"]
-[ext_resource type="PackedScene" uid="uid://d3dvfggcndutq" path="res://Scenes/checkpoint.tscn" id="8_6a5ds"]
-[ext_resource type="AudioStream" uid="uid://ci3x5k1ed3wcy" path="res://Audio/SFX/rip bozo.ogg" id="9_wc5ej"]
+[ext_resource type="Script" path="res://Scripts/World.gd" id="1_ukqjb"]
+[ext_resource type="PackedScene" uid="uid://cu4xs0tjgwrqn" path="res://Scenes/Player.tscn" id="2_fuliq"]
+[ext_resource type="Texture2D" uid="uid://c1i64g8wgq5c3" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="3_l4uic"]
+[ext_resource type="Texture2D" uid="uid://cy25h2p3nlkp4" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Hive.png" id="4_6s0ah"]
+[ext_resource type="Texture2D" uid="uid://cvbvhbtuh6jyt" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="5_2vhfu"]
+[ext_resource type="Texture2D" uid="uid://bah3g4sqffg3i" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="6_ip7t2"]
+[ext_resource type="Texture2D" uid="uid://q6v0u6yw4jm8" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Backgroundtiles.png" id="7_p20tu"]
+[ext_resource type="PackedScene" uid="uid://d3dvfggcndutq" path="res://Scenes/checkpoint.tscn" id="8_wbnte"]
+[ext_resource type="AudioStream" uid="uid://ci3x5k1ed3wcy" path="res://Audio/SFX/rip bozo.ogg" id="9_gfehl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t30d1"]
 resource_name = "Tree and bushes"
-texture = ExtResource("3_hknet")
+texture = ExtResource("3_l4uic")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1677,7 +1677,7 @@ texture = ExtResource("3_hknet")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtj5n"]
 resource_name = "Beehive?"
-texture = ExtResource("4_60xub")
+texture = ExtResource("4_6s0ah")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2047,7 +2047,7 @@ texture = ExtResource("4_60xub")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrlml"]
 resource_name = "More Tree"
-texture = ExtResource("5_la0kp")
+texture = ExtResource("5_2vhfu")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2906,7 +2906,7 @@ texture = ExtResource("5_la0kp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ppqxj"]
 resource_name = "Rocks"
-texture = ExtResource("6_j0rmr")
+texture = ExtResource("6_ip7t2")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -3906,7 +3906,7 @@ texture = ExtResource("6_j0rmr")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrduq"]
 resource_name = "backgroundtile"
-texture = ExtResource("7_de6kf")
+texture = ExtResource("7_p20tu")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -5581,10 +5581,10 @@ sources/3 = SubResource("TileSetAtlasSource_ppqxj")
 sources/4 = SubResource("TileSetAtlasSource_mrduq")
 
 [node name="ForestLevel" type="Node2D"]
-script = ExtResource("1_k4td3")
+script = ExtResource("1_ukqjb")
 metadata/_edit_vertical_guides_ = [-1126.0]
 
-[node name="Player" parent="." instance=ExtResource("2_bn7sp")]
+[node name="Player" parent="." instance=ExtResource("2_fuliq")]
 position = Vector2(109, -413)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -5605,10 +5605,10 @@ layer_4/tile_data = PackedInt32Array()
 [node name="starting_spawn" type="Marker2D" parent="."]
 position = Vector2(111, -414)
 
-[node name="Checkpoint" parent="." instance=ExtResource("8_6a5ds")]
+[node name="Checkpoint" parent="." instance=ExtResource("8_wbnte")]
 position = Vector2(1301, -248)
 
 [node name="death_audio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_wc5ej")
+stream = ExtResource("9_gfehl")
 volume_db = -2.857
 bus = &"SFX"
