@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=3 uid="uid://5swpoisrpc57"]
+
+[ext_resource type="Texture2D" uid="uid://dve850y14p5t3" path="res://Sprites/title screen/Background.png" id="1_y7f83"]
+[ext_resource type="FontFile" uid="uid://c82ei6t21k4k6" path="res://fonts/PixeloidSans.ttf" id="2_me88w"]
+[ext_resource type="Script" path="res://Scenes/intro_story.gd" id="3_fypkd"]
+[ext_resource type="Theme" uid="uid://diyljqya3ytvc" path="res://button_theme.tres" id="4_v8ynf"]
+[ext_resource type="Script" path="res://Scripts/menu_scripts/Back_Button.gd" id="5_lykqw"]
+[ext_resource type="Script" path="res://Scripts/menu_scripts/skip_button.gd" id="6_m5xmx"]
+[ext_resource type="AudioStream" uid="uid://ci3ts02utgdng" path="res://Audio/SFX/select_option.ogg" id="7_y2cwm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcls4"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_4ayla"]
+Label/styles/normal = SubResource("StyleBoxFlat_wcls4")
+
+[node name="Intro_Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -22.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_y7f83")
+
+[node name="intro_story" type="Label" parent="."]
+layout_mode = 2
+offset_left = 128.0
+offset_top = 96.0
+offset_right = 1024.0
+offset_bottom = 143.0
+theme = SubResource("Theme_4ayla")
+theme_override_fonts/font = ExtResource("2_me88w")
+theme_override_font_sizes/font_size = 30
+script = ExtResource("3_fypkd")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -65.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 60
+
+[node name="back_button" type="Button" parent="HBoxContainer3"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_v8ynf")
+theme_override_fonts/font = ExtResource("2_me88w")
+theme_override_font_sizes/font_size = 45
+text = "Back"
+script = ExtResource("5_lykqw")
+
+[node name="start_button" type="Button" parent="HBoxContainer3"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_v8ynf")
+theme_override_fonts/font = ExtResource("2_me88w")
+theme_override_font_sizes/font_size = 45
+text = "Start"
+script = ExtResource("6_m5xmx")
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_y2cwm")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="HBoxContainer3/back_button" to="HBoxContainer3/back_button" method="_on_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer3/back_button" to="HBoxContainer3/back_button" method="_on_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer3/start_button" to="HBoxContainer3/start_button" method="_on_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer3/start_button" to="HBoxContainer3/start_button" method="_on_pressed"]

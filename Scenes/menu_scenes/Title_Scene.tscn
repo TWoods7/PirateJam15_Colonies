@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://1k0dios233da"]
 
-[ext_resource type="Texture2D" uid="uid://dve850y14p5t3" path="res://Sprites/title screen/Background.png" id="1_m0f4q"]
-[ext_resource type="Script" path="res://Scripts/menu_scripts/Title_Screen.gd" id="1_wgrf6"]
-[ext_resource type="Texture2D" uid="uid://gsf3l1al60g" path="res://Sprites/title screen/title.png" id="2_wxewe"]
-[ext_resource type="FontFile" uid="uid://c82ei6t21k4k6" path="res://fonts/PixeloidSans.ttf" id="3_1aqb5"]
-[ext_resource type="Theme" uid="uid://diyljqya3ytvc" path="res://button_theme.tres" id="3_23emr"]
-[ext_resource type="Script" path="res://Scripts/menu_scripts/start_button.gd" id="4_hk4rq"]
-[ext_resource type="Script" path="res://Scripts/menu_scripts/options_button.gd" id="5_3d6rh"]
-[ext_resource type="Script" path="res://Scripts/menu_scripts/credits_button.gd" id="6_josat"]
-[ext_resource type="AudioStream" uid="uid://ci3ts02utgdng" path="res://Audio/SFX/select_option.ogg" id="8_h7yro"]
+[ext_resource type="Script" path="res://Scripts/menu_scripts/Title_Screen.gd" id="1_dgnve"]
+[ext_resource type="Texture2D" uid="uid://dve850y14p5t3" path="res://Sprites/title screen/Background.png" id="2_n643a"]
+[ext_resource type="Texture2D" uid="uid://gsf3l1al60g" path="res://Sprites/title screen/title.png" id="3_e1wfb"]
+[ext_resource type="Theme" uid="uid://diyljqya3ytvc" path="res://button_theme.tres" id="4_7i1kt"]
+[ext_resource type="FontFile" uid="uid://c82ei6t21k4k6" path="res://fonts/PixeloidSans.ttf" id="5_y1rp6"]
+[ext_resource type="Script" path="res://Scripts/menu_scripts/start_button.gd" id="6_7vyqu"]
+[ext_resource type="Script" path="res://Scripts/menu_scripts/options_button.gd" id="7_f12mr"]
+[ext_resource type="Script" path="res://Scripts/menu_scripts/credits_button.gd" id="8_52aoh"]
+[ext_resource type="AudioStream" uid="uid://ci3ts02utgdng" path="res://Audio/SFX/select_option.ogg" id="9_djfg1"]
 
 [node name="Title_Screen" type="Control"]
 layout_mode = 3
@@ -17,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wgrf6")
+script = ExtResource("1_dgnve")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -28,7 +28,7 @@ offset_top = -22.0
 offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_m0f4q")
+texture = ExtResource("2_n643a")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -58,7 +58,7 @@ offset_left = -284.0
 offset_top = -35.993
 offset_right = 284.0
 offset_bottom = 36.007
-texture = ExtResource("2_wxewe")
+texture = ExtResource("3_e1wfb")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -85,30 +85,30 @@ theme_override_constants/separation = 10
 
 [node name="start_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_23emr")
-theme_override_fonts/font = ExtResource("3_1aqb5")
+theme = ExtResource("4_7i1kt")
+theme_override_fonts/font = ExtResource("5_y1rp6")
 theme_override_font_sizes/font_size = 45
 text = "START"
-script = ExtResource("4_hk4rq")
+script = ExtResource("6_7vyqu")
 
 [node name="options_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_23emr")
-theme_override_fonts/font = ExtResource("3_1aqb5")
+theme = ExtResource("4_7i1kt")
+theme_override_fonts/font = ExtResource("5_y1rp6")
 theme_override_font_sizes/font_size = 45
 text = "OPTIONS"
-script = ExtResource("5_3d6rh")
+script = ExtResource("7_f12mr")
 
 [node name="credits_button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_23emr")
-theme_override_fonts/font = ExtResource("3_1aqb5")
+theme = ExtResource("4_7i1kt")
+theme_override_fonts/font = ExtResource("5_y1rp6")
 theme_override_font_sizes/font_size = 45
 text = "CREDITS"
-script = ExtResource("6_josat")
+script = ExtResource("8_52aoh")
 
 [node name="Hover" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_h7yro")
+stream = ExtResource("9_djfg1")
 bus = &"SFX"
 
 [connection signal="mouse_entered" from="MarginContainer/HBoxContainer/VBoxContainer/start_button" to="MarginContainer/HBoxContainer/VBoxContainer/start_button" method="_on_mouse_entered"]
