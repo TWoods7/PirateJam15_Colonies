@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://u20hshu0p5eu"]
+[gd_scene load_steps=10 format=3 uid="uid://5swpoisrpc57"]
 
 [ext_resource type="Texture2D" uid="uid://dve850y14p5t3" path="res://Sprites/title screen/Background.png" id="1_y7f83"]
 [ext_resource type="FontFile" uid="uid://c82ei6t21k4k6" path="res://fonts/PixeloidSans.ttf" id="2_me88w"]
 [ext_resource type="Script" path="res://Scenes/intro_story.gd" id="3_fypkd"]
-[ext_resource type="Theme" uid="uid://bi2i8tvis3sa0" path="res://button_theme.tres" id="4_v8ynf"]
+[ext_resource type="Theme" uid="uid://diyljqya3ytvc" path="res://button_theme.tres" id="4_v8ynf"]
 [ext_resource type="Script" path="res://Scripts/menu_scripts/Back_Button.gd" id="5_lykqw"]
 [ext_resource type="Script" path="res://Scripts/menu_scripts/skip_button.gd" id="6_m5xmx"]
 [ext_resource type="AudioStream" uid="uid://ci3ts02utgdng" path="res://Audio/SFX/select_option.ogg" id="7_y2cwm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcls4"]
+content_margin_left = 15.0
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 5
 border_width_top = 5
@@ -55,11 +56,11 @@ script = ExtResource("3_fypkd")
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.95
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.95
 offset_left = -100.0
 offset_top = -65.0
 offset_right = 100.0

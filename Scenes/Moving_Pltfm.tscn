@@ -1,13 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cu3phblrub62l"]
+[gd_scene load_steps=7 format=3 uid="uid://cu3phblrub62l"]
 
 [ext_resource type="Script" path="res://Scripts/movingPltfm.gd" id="1_a6e48"]
 [ext_resource type="Texture2D" uid="uid://biwond464pw3f" path="res://Sprites/Tiles/tiles_packed.png" id="2_cxi1w"]
-
-[sub_resource type="Curve2D" id="Curve2D_soedb"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 48, -11, 0, 0, 0, 0, 400, -11)
-}
-point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3lgs"]
 size = Vector2(50, 14)
@@ -51,11 +45,10 @@ _data = {
 }
 
 [node name="movingPltfm" type="Path2D"]
-curve = SubResource("Curve2D_soedb")
 script = ExtResource("1_a6e48")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(38.5707, -5.73159)
+position = Vector2(37.9972, -8.44114)
 progress = 34.0581
 rotates = false
 
@@ -63,7 +56,7 @@ rotates = false
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(38.5707, -5.73159)
+position = Vector2(37.9972, -8.44114)
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 texture = ExtResource("2_cxi1w")
