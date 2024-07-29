@@ -6,5 +6,5 @@ func _on_body_entered(body):
 	is_on_node = true
 
 
-func _on_body_exited(body):
+func _on_body_exited(_body):
 	is_on_node = false
