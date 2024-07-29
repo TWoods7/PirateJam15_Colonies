@@ -21,6 +21,6 @@ func _ready():
 		#don't call the process function anymore because we're using an animation to move the platform
 		set_process(false) 
 
-func _process(delta):
+func _process(_delta):
 	#if path is closed, movement will be as follows:
 	path.progress += pltfm_speed
