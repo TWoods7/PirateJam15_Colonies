@@ -5693,9 +5693,3 @@ position = Vector2(2268, -171)
 
 [node name="Bridge9" parent="." instance=ExtResource("14_u87p6")]
 position = Vector2(2229, -171)
-
-[node name="breaking_pltm10" parent="." instance=ExtResource("10_myhow")]
-position = Vector2(121, -109)
-
-[node name="breaking_pltm11" parent="." instance=ExtResource("10_myhow")]
-position = Vector2(176, -127)
