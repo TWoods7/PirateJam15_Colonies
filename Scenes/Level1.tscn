@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://3coklqvavtqo"]
+[gd_scene load_steps=33 format=3 uid="uid://3coklqvavtqo"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_sg3tl"]
 [ext_resource type="PackedScene" uid="uid://cu4xs0tjgwrqn" path="res://Scenes/Player.tscn" id="2_todgk"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cu3phblrub62l" path="res://Scenes/Moving_Pltfm.tscn" id="12_20vvo"]
 [ext_resource type="PackedScene" uid="uid://cpse5686m6odh" path="res://Scenes/bridge_node.tscn" id="13_y6lec"]
 [ext_resource type="PackedScene" uid="uid://cnvlitfjjpn0r" path="res://Scenes/bridge.tscn" id="14_bcwc0"]
+[ext_resource type="PackedScene" uid="uid://753dv2afnst8" path="res://Scenes/wall.tscn" id="15_2muc5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t30d1"]
 resource_name = "Tree and bushes"
@@ -5732,7 +5733,7 @@ position = Vector2(2148, 64)
 curve = SubResource("Curve2D_v5tmx")
 
 [node name="Bridge_Node" parent="." groups=["Node"] instance=ExtResource("13_y6lec")]
-position = Vector2(2120, -197)
+position = Vector2(2105, -198)
 
 [node name="Bridge_Node2" parent="." groups=["Node"] instance=ExtResource("13_y6lec")]
 position = Vector2(1960, 26)
@@ -5794,3 +5795,7 @@ curve = SubResource("Curve2D_angfr")
 [node name="movingPltfm10" parent="." instance=ExtResource("12_20vvo")]
 position = Vector2(1712, -291)
 curve = SubResource("Curve2D_bhedr")
+
+[node name="Wall" parent="." groups=["Wall"] instance=ExtResource("15_2muc5")]
+position = Vector2(2121, -254)
+scale = Vector2(1, 8.02494)

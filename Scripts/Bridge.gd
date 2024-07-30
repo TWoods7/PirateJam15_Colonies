@@ -8,7 +8,10 @@ func _process(delta):
 	pass
 	
 #-- Flips the Collider to disabled or !disabled based on its visibility change --#
-func _on_visibility_changed(): 
-	state = !state # Flips state to either true or false
-	bridge.disabled = !state #Disables the Colliders Collision
+func _on_visibility_changed():
+	if bridge != null: 
+		state = !state # Flips state to either true or false
+		bridge.disabled = !state #Disables the Colliders Collision
+	else:
+		pass
 #--------------------------------------------------------------------------------#

@@ -23,6 +23,7 @@ var did_right_jump = false # Check for if player just jumped to the right
  
 @onready var nodes = get_tree().get_nodes_in_group("Node") # The array of nodes that are in the group Node
 @onready var bridges = get_tree().get_nodes_in_group("Bridge") # The array of nodes that are in the group Bridge
+@onready var walls = get_tree().get_nodes_in_group("Wall")
 var index = 0 # Index for accessing different set of bridges and their nodes
 var state = false # Used for flipping the bridges visibilty and collision
 
@@ -46,7 +47,7 @@ func _physics_process(delta):
 	#-- Breaks level into seperate areas where the plant bridge you change is decided--#
 	if global_position.x > 1950 and global_position.x< 1975:
 		index = 1
-	elif global_position.x > 2110 and global_position.x< 2130:
+	elif global_position.x > 2090 and global_position.x< 2115:
 		index = 0
 	elif global_position.x > 2575 and global_position.x< 2600:
 		index = 2
@@ -128,6 +129,7 @@ func movement_control(delta): # Holds all movement control
 			if nodes[index].is_on_node:
 				state = !state # Flips state to either true or false
 				bridges[index].visible = state #Makes the specific bridge in the array be either visible or !visible
+				walls[index].visible = !state
 			else:
 				pass
 	
