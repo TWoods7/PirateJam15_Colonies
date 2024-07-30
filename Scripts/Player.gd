@@ -49,9 +49,9 @@ func _physics_process(delta):
 		index = 1
 	elif global_position.x > 2090 and global_position.x< 2115:
 		index = 0
-	elif global_position.x > 2575 and global_position.x< 2600:
+	elif global_position.x > 2560 and global_position.x< 2575:
 		index = 2
-	elif global_position.x > 3825 and global_position.x< 3850:
+	elif global_position.x > 3810 and global_position.x< 3825:
 		index = 3
 	#----------------------------------------------------------------------------------#
 
@@ -123,7 +123,7 @@ func movement_control(delta): # Holds all movement control
 			jump_audio.play()
 	
 	if Input.is_action_just_pressed("plant_bridge") and has_bridge:
-		if bridges.is_empty() and nodes.is_empty():
+		if bridges.is_empty() and nodes.is_empty() and walls.is_empty():
 			pass
 		else:
 			if nodes[index].is_on_node:
