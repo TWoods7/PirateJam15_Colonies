@@ -1,21 +1,22 @@
-[gd_scene load_steps=31 format=3 uid="uid://cc2bvg2yux13l"]
+[gd_scene load_steps=32 format=3 uid="uid://cc2bvg2yux13l"]
 
-[ext_resource type="Script" path="res://Scripts/World.gd" id="1_nn1lt"]
-[ext_resource type="Texture2D" uid="uid://c1i64g8wgq5c3" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_uj1vg"]
-[ext_resource type="Texture2D" uid="uid://cy25h2p3nlkp4" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Hive.png" id="3_ldcwh"]
-[ext_resource type="Texture2D" uid="uid://cvbvhbtuh6jyt" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="4_q4o23"]
-[ext_resource type="Texture2D" uid="uid://bah3g4sqffg3i" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="5_v0c2y"]
-[ext_resource type="Texture2D" uid="uid://q6v0u6yw4jm8" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Backgroundtiles.png" id="6_imtut"]
-[ext_resource type="Texture2D" uid="uid://beljm1fcot6yn" path="res://Sprites/Tiles/oneway.png" id="7_8qfwq"]
-[ext_resource type="AudioStream" uid="uid://ci3x5k1ed3wcy" path="res://Audio/SFX/rip bozo.ogg" id="7_q42gx"]
-[ext_resource type="PackedScene" uid="uid://boa8r0y883kop" path="res://Scenes/Breaking_Pltm.tscn" id="8_qbubi"]
-[ext_resource type="PackedScene" uid="uid://cu3phblrub62l" path="res://Scenes/Moving_Pltfm.tscn" id="10_jkrsm"]
-[ext_resource type="PackedScene" uid="uid://d3dvfggcndutq" path="res://Scenes/checkpoint.tscn" id="11_fa45e"]
-[ext_resource type="PackedScene" uid="uid://cjigr02ydodrh" path="res://Scenes/portal.tscn" id="12_e8wvu"]
+[ext_resource type="Script" path="res://Scripts/World.gd" id="1_ofqkv"]
+[ext_resource type="PackedScene" uid="uid://cu4xs0tjgwrqn" path="res://Scenes/Player.tscn" id="2_mtwsw"]
+[ext_resource type="Texture2D" uid="uid://c1i64g8wgq5c3" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="3_fitg4"]
+[ext_resource type="Texture2D" uid="uid://cy25h2p3nlkp4" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Hive.png" id="4_t5bp6"]
+[ext_resource type="Texture2D" uid="uid://cvbvhbtuh6jyt" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="5_l0rd0"]
+[ext_resource type="Texture2D" uid="uid://bah3g4sqffg3i" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="6_xyuwa"]
+[ext_resource type="Texture2D" uid="uid://q6v0u6yw4jm8" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Backgroundtiles.png" id="7_p70vh"]
+[ext_resource type="Texture2D" uid="uid://beljm1fcot6yn" path="res://Sprites/Tiles/oneway.png" id="8_s6ihn"]
+[ext_resource type="AudioStream" uid="uid://ci3x5k1ed3wcy" path="res://Audio/SFX/rip bozo.ogg" id="9_q3q5p"]
+[ext_resource type="PackedScene" uid="uid://boa8r0y883kop" path="res://Scenes/Breaking_Pltm.tscn" id="10_p0xrl"]
+[ext_resource type="PackedScene" uid="uid://cu3phblrub62l" path="res://Scenes/Moving_Pltfm.tscn" id="11_w2rw3"]
+[ext_resource type="PackedScene" uid="uid://d3dvfggcndutq" path="res://Scenes/checkpoint.tscn" id="12_2usi3"]
+[ext_resource type="PackedScene" uid="uid://cjigr02ydodrh" path="res://Scenes/portal.tscn" id="13_5kk7f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t30d1"]
 resource_name = "Tree and bushes"
-texture = ExtResource("2_uj1vg")
+texture = ExtResource("3_fitg4")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1680,7 +1681,7 @@ texture = ExtResource("2_uj1vg")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtj5n"]
 resource_name = "Beehive?"
-texture = ExtResource("3_ldcwh")
+texture = ExtResource("4_t5bp6")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2050,7 +2051,7 @@ texture = ExtResource("3_ldcwh")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrlml"]
 resource_name = "More Tree"
-texture = ExtResource("4_q4o23")
+texture = ExtResource("5_l0rd0")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -2909,7 +2910,7 @@ texture = ExtResource("4_q4o23")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ppqxj"]
 resource_name = "Rocks"
-texture = ExtResource("5_v0c2y")
+texture = ExtResource("6_xyuwa")
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -3909,7 +3910,7 @@ texture = ExtResource("5_v0c2y")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrduq"]
 resource_name = "backgroundtile"
-texture = ExtResource("6_imtut")
+texture = ExtResource("7_p70vh")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -5576,7 +5577,7 @@ texture = ExtResource("6_imtut")
 11:19/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_opl4x"]
-texture = ExtResource("7_8qfwq")
+texture = ExtResource("8_s6ihn")
 texture_region_size = Vector2i(45, 12)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5660,8 +5661,11 @@ _data = {
 point_count = 2
 
 [node name="RiverLevel" type="Node2D"]
-script = ExtResource("1_nn1lt")
+script = ExtResource("1_ofqkv")
 metadata/_edit_vertical_guides_ = [-1126.0]
+
+[node name="Player" parent="." instance=ExtResource("2_mtwsw")]
+position = Vector2(40, -400)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(817, -701)
@@ -5682,109 +5686,110 @@ layer_4/tile_data = PackedInt32Array()
 position = Vector2(111, -414)
 
 [node name="death_audio" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_q42gx")
+position = Vector2(88, -40)
+stream = ExtResource("9_q3q5p")
 volume_db = -2.857
 bus = &"SFX"
 
-[node name="breaking_pltm" parent="." instance=ExtResource("8_qbubi")]
+[node name="breaking_pltm" parent="." instance=ExtResource("10_p0xrl")]
 position = Vector2(2789, -198)
 
-[node name="breaking_pltm2" parent="." instance=ExtResource("8_qbubi")]
+[node name="breaking_pltm2" parent="." instance=ExtResource("10_p0xrl")]
 position = Vector2(2887, -151)
 
-[node name="breaking_pltm3" parent="." instance=ExtResource("8_qbubi")]
+[node name="breaking_pltm3" parent="." instance=ExtResource("10_p0xrl")]
 position = Vector2(2990, -148)
 
-[node name="breaking_pltm4" parent="." instance=ExtResource("8_qbubi")]
+[node name="breaking_pltm4" parent="." instance=ExtResource("10_p0xrl")]
 position = Vector2(3072, -208)
 
-[node name="movingPltfm2" parent="." instance=ExtResource("10_jkrsm")]
+[node name="movingPltfm2" parent="." instance=ExtResource("11_w2rw3")]
 position = Vector2(1016, -216)
 curve = SubResource("Curve2D_xmd3o")
 
-[node name="movingPltfm" parent="." instance=ExtResource("10_jkrsm")]
+[node name="movingPltfm" parent="." instance=ExtResource("11_w2rw3")]
 position = Vector2(976, -280)
 curve = SubResource("Curve2D_ykwr5")
 
-[node name="movingPltfm3" parent="." instance=ExtResource("10_jkrsm")]
+[node name="movingPltfm3" parent="." instance=ExtResource("11_w2rw3")]
 position = Vector2(1080, -152)
 curve = SubResource("Curve2D_nla3t")
 
-[node name="Checkpoint" parent="." instance=ExtResource("11_fa45e")]
+[node name="Checkpoint" parent="." instance=ExtResource("12_2usi3")]
 position = Vector2(1536, -192)
 
-[node name="movingPltfm4" parent="." instance=ExtResource("10_jkrsm")]
+[node name="movingPltfm4" parent="." instance=ExtResource("11_w2rw3")]
 position = Vector2(1880, -184)
 curve = SubResource("Curve2D_5q7y4")
 spd_scale = 4
 
-[node name="movingPltfm5" parent="." instance=ExtResource("10_jkrsm")]
+[node name="movingPltfm5" parent="." instance=ExtResource("11_w2rw3")]
 position = Vector2(1944, -312)
 curve = SubResource("Curve2D_mfij3")
 spd_scale = 4
 
-[node name="movingPltfm6" parent="." instance=ExtResource("10_jkrsm")]
+[node name="movingPltfm6" parent="." instance=ExtResource("11_w2rw3")]
 position = Vector2(1880, -440)
 curve = SubResource("Curve2D_v1eth")
 spd_scale = 4
 
-[node name="movingPltfm7" parent="." instance=ExtResource("10_jkrsm")]
+[node name="movingPltfm7" parent="." instance=ExtResource("11_w2rw3")]
 position = Vector2(1880, -696)
 curve = SubResource("Curve2D_oh07m")
 spd_scale = 4
 
-[node name="movingPltfm8" parent="." instance=ExtResource("10_jkrsm")]
+[node name="movingPltfm8" parent="." instance=ExtResource("11_w2rw3")]
 position = Vector2(1952, -824)
 curve = SubResource("Curve2D_f2iqq")
 spd_scale = 4
 
-[node name="movingPltfm9" parent="." instance=ExtResource("10_jkrsm")]
+[node name="movingPltfm9" parent="." instance=ExtResource("11_w2rw3")]
 position = Vector2(1944, -568)
 curve = SubResource("Curve2D_llon3")
 spd_scale = 4
 
-[node name="Checkpoint2" parent="." instance=ExtResource("11_fa45e")]
+[node name="Checkpoint2" parent="." instance=ExtResource("12_2usi3")]
 position = Vector2(2576, -616)
 
-[node name="breaking_pltm5" parent="." instance=ExtResource("8_qbubi")]
+[node name="breaking_pltm5" parent="." instance=ExtResource("10_p0xrl")]
 position = Vector2(3032, -264)
 
-[node name="breaking_pltm6" parent="." instance=ExtResource("8_qbubi")]
+[node name="breaking_pltm6" parent="." instance=ExtResource("10_p0xrl")]
 position = Vector2(3104, -328)
 
-[node name="breaking_pltm7" parent="." instance=ExtResource("8_qbubi")]
+[node name="breaking_pltm7" parent="." instance=ExtResource("10_p0xrl")]
 position = Vector2(3176, -568)
 
-[node name="breaking_pltm8" parent="." instance=ExtResource("8_qbubi")]
+[node name="breaking_pltm8" parent="." instance=ExtResource("10_p0xrl")]
 position = Vector2(3032, -408)
 
-[node name="breaking_pltm9" parent="." instance=ExtResource("8_qbubi")]
+[node name="breaking_pltm9" parent="." instance=ExtResource("10_p0xrl")]
 position = Vector2(3120, -472)
 
-[node name="breaking_pltm10" parent="." instance=ExtResource("8_qbubi")]
+[node name="breaking_pltm10" parent="." instance=ExtResource("10_p0xrl")]
 position = Vector2(3152, -520)
 
-[node name="breaking_pltm11" parent="." instance=ExtResource("8_qbubi")]
+[node name="breaking_pltm11" parent="." instance=ExtResource("10_p0xrl")]
 position = Vector2(3152, -360)
 
-[node name="Checkpoint3" parent="." instance=ExtResource("11_fa45e")]
+[node name="Checkpoint3" parent="." instance=ExtResource("12_2usi3")]
 position = Vector2(3424, -704)
 
-[node name="breaking_pltm12" parent="." instance=ExtResource("8_qbubi")]
+[node name="breaking_pltm12" parent="." instance=ExtResource("10_p0xrl")]
 position = Vector2(5576, -648)
 
-[node name="movingPltfm10" parent="." instance=ExtResource("10_jkrsm")]
+[node name="movingPltfm10" parent="." instance=ExtResource("11_w2rw3")]
 position = Vector2(5696, -376)
 curve = SubResource("Curve2D_w61cb")
 spd_scale = 3
 
-[node name="breaking_pltm13" parent="." instance=ExtResource("8_qbubi")]
+[node name="breaking_pltm13" parent="." instance=ExtResource("10_p0xrl")]
 position = Vector2(5440, -384)
 
-[node name="movingPltfm11" parent="." instance=ExtResource("10_jkrsm")]
+[node name="movingPltfm11" parent="." instance=ExtResource("11_w2rw3")]
 position = Vector2(5280, -376)
 curve = SubResource("Curve2D_gisqx")
 spd_scale = 3
 
-[node name="Portal" parent="." instance=ExtResource("12_e8wvu")]
+[node name="Portal" parent="." instance=ExtResource("13_5kk7f")]
 position = Vector2(5008, -48)
