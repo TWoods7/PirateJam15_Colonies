@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://tnjigbfjqjdo"]
 
-[ext_resource type="Script" path="res://Scenes/spike_group.gd" id="1_hwrfa"]
+[ext_resource type="Script" path="res://Scripts/spike_group.gd" id="1_hwrfa"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_ote2f"]
 b = Vector2(0, 32)

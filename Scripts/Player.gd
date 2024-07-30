@@ -93,8 +93,10 @@ func movement_control(delta): # Holds all movement control
 		player_speed = move_speed #Reset player speed to base speed on floor
 		jump_count = 0 # Resets Amount of times jumped
 		
-	if spikes[0].is_on_node :
-		World.game_over()
+		for i in spikes:
+			if i.is_on_node :
+				World.game_over()
+	
 		
 	#-- Check for if player tried to dash and can dash --#
 	if Input.is_action_just_pressed("dash") and can_dash and has_dash: 
