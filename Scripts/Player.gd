@@ -91,6 +91,7 @@ func movement_control(delta): # Holds all movement control
 		player_speed = move_speed #Reset player speed to base speed on floor
 		jump_count = 0 # Resets Amount of times jumped
 		
+	
 	#-- Check for if player tried to dash and can dash --#
 	if Input.is_action_just_pressed("dash") and can_dash and has_dash: 
 		is_dashing = true # States player is dashing
