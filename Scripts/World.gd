@@ -16,6 +16,7 @@ func _process(delta):
 	if player.global_position.y > bottom_bound: #Game over if below bottom bound
 		game_over()
 	
+	
 func game_over(): # Teleports player to start or a checkpoint
 	print("gameover")
 	death_audio.play()

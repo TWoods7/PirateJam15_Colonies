@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://3coklqvavtqo"]
+[gd_scene load_steps=35 format=3 uid="uid://3coklqvavtqo"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_5h3ug"]
 [ext_resource type="PackedScene" uid="uid://cu4xs0tjgwrqn" path="res://Scenes/Player.tscn" id="2_rtv3f"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cnvlitfjjpn0r" path="res://Scenes/bridge.tscn" id="14_85rnm"]
 [ext_resource type="PackedScene" uid="uid://753dv2afnst8" path="res://Scenes/wall.tscn" id="15_886lj"]
 [ext_resource type="PackedScene" uid="uid://cjigr02ydodrh" path="res://Scenes/portal.tscn" id="16_a3k2t"]
+[ext_resource type="PackedScene" uid="uid://tnjigbfjqjdo" path="res://Scenes/spike_group.tscn" id="17_4peop"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t30d1"]
 resource_name = "Tree and bushes"
@@ -5813,7 +5814,7 @@ scale = Vector2(1, 12)
 position = Vector2(3833, -369)
 scale = Vector2(1, 14.44)
 
-[node name="Area2D" parent="." instance=ExtResource("16_a3k2t")]
+[node name="Portal" parent="." instance=ExtResource("16_a3k2t")]
 position = Vector2(4208, -278)
 
 [node name="Checkpoint2" parent="." instance=ExtResource("9_hy0pn")]
@@ -5821,3 +5822,6 @@ position = Vector2(2012, -204)
 
 [node name="Checkpoint3" parent="." instance=ExtResource("9_hy0pn")]
 position = Vector2(3383, -361)
+
+[node name="SpikeGroup" parent="." groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(1393, -226)

@@ -3,6 +3,7 @@ extends CharacterBody2D
 # DO NOT CHANGE A VAR TO A CONST UNLESS A COMMENT SAYS OTHERWISE
 #
 @onready var animation = $AnimatedSprite2D
+@onready var World = $".."
 
 var check = false
 
@@ -24,6 +25,7 @@ var did_right_jump = false # Check for if player just jumped to the right
 @onready var nodes = get_tree().get_nodes_in_group("Node") # The array of nodes that are in the group Node
 @onready var bridges = get_tree().get_nodes_in_group("Bridge") # The array of nodes that are in the group Bridge
 @onready var walls = get_tree().get_nodes_in_group("Wall")
+@onready var spikes = get_tree().get_nodes_in_group("Spikes")
 var index = 0 # Index for accessing different set of bridges and their nodes
 var state = false # Used for flipping the bridges visibilty and collision
 
@@ -91,7 +93,9 @@ func movement_control(delta): # Holds all movement control
 		player_speed = move_speed #Reset player speed to base speed on floor
 		jump_count = 0 # Resets Amount of times jumped
 		
-	
+	if spikes[0].is_on_node :
+		World.game_over()
+		
 	#-- Check for if player tried to dash and can dash --#
 	if Input.is_action_just_pressed("dash") and can_dash and has_dash: 
 		is_dashing = true # States player is dashing

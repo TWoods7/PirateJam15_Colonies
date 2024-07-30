@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://tnjigbfjqjdo"]
+
+[ext_resource type="Script" path="res://Scenes/spike_group.gd" id="1_hwrfa"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ote2f"]
+b = Vector2(0, 32)
+
+[node name="SpikeGroup" type="Area2D"]
+script = ExtResource("1_hwrfa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, -1)
+rotation = 1.5708
+scale = Vector2(3.56, 1)
+shape = SubResource("SegmentShape2D_ote2f")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
