@@ -5755,4 +5755,4 @@ position = Vector2(3424, -704)
 position = Vector2(5576, -648)
 
 [node name="movingPltfm10" parent="." instance=ExtResource("10_jkrsm")]
-position = Vector2(5784, -376)
+position = Vector2(5696, -376)
