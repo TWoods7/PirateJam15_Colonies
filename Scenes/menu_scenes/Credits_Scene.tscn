@@ -60,18 +60,17 @@ text = "CREDITS"
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 0
-offset_left = 287.0
+offset_left = 200.0
 offset_top = 150.0
-offset_right = 888.0
+offset_right = 1000.0
 offset_bottom = 509.0
 alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer2"]
-custom_minimum_size = Vector2(500, 300)
+custom_minimum_size = Vector2(800, 300)
 layout_mode = 2
 theme = SubResource("Theme_qjwxe")
 scroll_horizontal_custom_step = 0.0
-horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2/ScrollContainer"]
@@ -83,9 +82,20 @@ theme_override_constants/separation = 60
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_d8xbx")
 theme_override_font_sizes/font_size = 30
-text = "enter credits here
-this is a scrolling box
-"
+text = "Art
+Hooded Protagonist: Penzilla 
+https://penzilla.itch.io/hooded-protagonist
+
+Legacy Fantasy Pack: anokolisa 
+https://anokolisa.itch.io/sidescroller-pixelart-sprites-asset-pack-forest-16x16#download
+
+Pixel art Font: ggbot 
+https://ggbot.itch.io/pixeloid-font
+
+Special Thanks
+Our council of Devs: Dave (Pandadave), Aditi (bubbles), Taylor (Buffalo_Pig)
+Music Master Supreme: Rafa (rafa)
+Oracle of Design: Anthony (TonyPF)"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(200, 0)
