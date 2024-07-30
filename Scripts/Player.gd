@@ -3,6 +3,7 @@ extends CharacterBody2D
 # DO NOT CHANGE A VAR TO A CONST UNLESS A COMMENT SAYS OTHERWISE
 #
 @onready var animation = $AnimatedSprite2D
+@onready var World = $".."
 
 var check = false
 
@@ -23,6 +24,8 @@ var did_right_jump = false # Check for if player just jumped to the right
  
 @onready var nodes = get_tree().get_nodes_in_group("Node") # The array of nodes that are in the group Node
 @onready var bridges = get_tree().get_nodes_in_group("Bridge") # The array of nodes that are in the group Bridge
+@onready var walls = get_tree().get_nodes_in_group("Wall")
+@onready var spikes = get_tree().get_nodes_in_group("Spikes")
 var index = 0 # Index for accessing different set of bridges and their nodes
 var state = false # Used for flipping the bridges visibilty and collision
 
@@ -46,11 +49,11 @@ func _physics_process(delta):
 	#-- Breaks level into seperate areas where the plant bridge you change is decided--#
 	if global_position.x > 1950 and global_position.x< 1975:
 		index = 1
-	elif global_position.x > 2110 and global_position.x< 2130:
+	elif global_position.x > 2090 and global_position.x< 2115:
 		index = 0
-	elif global_position.x > 2575 and global_position.x< 2600:
+	elif global_position.x > 2560 and global_position.x< 2575:
 		index = 2
-	elif global_position.x > 3825 and global_position.x< 3850:
+	elif global_position.x > 3810 and global_position.x< 3825:
 		index = 3
 	#----------------------------------------------------------------------------------#
 
@@ -90,6 +93,11 @@ func movement_control(delta): # Holds all movement control
 		player_speed = move_speed #Reset player speed to base speed on floor
 		jump_count = 0 # Resets Amount of times jumped
 		
+		for i in spikes:
+			if i.is_on_node :
+				World.game_over()
+	
+		
 	#-- Check for if player tried to dash and can dash --#
 	if Input.is_action_just_pressed("dash") and can_dash and has_dash: 
 		is_dashing = true # States player is dashing
@@ -122,12 +130,13 @@ func movement_control(delta): # Holds all movement control
 			jump_audio.play()
 	
 	if Input.is_action_just_pressed("plant_bridge") and has_bridge:
-		if bridges.is_empty() and nodes.is_empty():
+		if bridges.is_empty() and nodes.is_empty() and walls.is_empty():
 			pass
 		else:
 			if nodes[index].is_on_node:
 				state = !state # Flips state to either true or false
 				bridges[index].visible = state #Makes the specific bridge in the array be either visible or !visible
+				walls[index].visible = !state
 			else:
 				pass
 	

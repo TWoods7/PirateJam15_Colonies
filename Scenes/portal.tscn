@@ -45,7 +45,7 @@ _data = {
 "idle": SubResource("Animation_nnypm")
 }
 
-[node name="Area2D" type="Area2D"]
+[node name="Portal" type="Area2D"]
 script = ExtResource("1_qqa5o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
