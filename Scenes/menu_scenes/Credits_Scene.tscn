@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://ci3ts02utgdng" path="res://Audio/SFX/select_option.ogg" id="6_74kqo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tiqfw"]
+content_margin_left = 10.0
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 5
 border_width_top = 5

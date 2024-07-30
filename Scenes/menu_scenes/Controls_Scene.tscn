@@ -1,0 +1,126 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3ud6dfsos4y0"]
+
+[ext_resource type="Texture2D" uid="uid://dve850y14p5t3" path="res://Sprites/title screen/Background.png" id="1_mwfb3"]
+[ext_resource type="FontFile" uid="uid://c82ei6t21k4k6" path="res://fonts/PixeloidSans.ttf" id="2_rdndq"]
+[ext_resource type="Texture2D" uid="uid://0t67m8v2evfl" path="res://Sprites/title screen/controls.png" id="3_7jgft"]
+[ext_resource type="Theme" uid="uid://diyljqya3ytvc" path="res://button_theme.tres" id="3_51623"]
+[ext_resource type="Script" path="res://Scripts/menu_scripts/Back_Button.gd" id="4_38xp8"]
+[ext_resource type="AudioStream" uid="uid://ci3ts02utgdng" path="res://Audio/SFX/select_option.ogg" id="5_23pab"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7t64"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_ohhjn"]
+default_font = ExtResource("2_rdndq")
+default_font_size = 25
+Label/styles/normal = SubResource("StyleBoxFlat_w7t64")
+
+[node name="Controls_Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -22.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mwfb3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.5
+offset_top = 50.0
+offset_right = 133.5
+offset_bottom = 124.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="title_label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rdndq")
+theme_override_font_sizes/font_size = 60
+text = "CONTROLS"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -428.0
+offset_top = -179.5
+offset_right = 428.0
+offset_bottom = 179.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("3_7jgft")
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(150, 350)
+layout_mode = 2
+theme = SubResource("Theme_ohhjn")
+text = "Arrow Keys to move
+Space to jump & double
+jump
+Press Z to Dash
+Press X to build a bridge
+next to a node"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -118.0
+offset_right = 100.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="back_button" type="Button" parent="HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_51623")
+theme_override_fonts/font = ExtResource("2_rdndq")
+theme_override_font_sizes/font_size = 45
+text = "BACK"
+script = ExtResource("4_38xp8")
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_23pab")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="HBoxContainer3/back_button" to="HBoxContainer3/back_button" method="_on_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer3/back_button" to="HBoxContainer3/back_button" method="_on_pressed"]
