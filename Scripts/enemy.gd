@@ -4,8 +4,8 @@ extends Area2D
 @export var move_speed = 30.0
 @export var move_dir : Vector2
 
-@export var start_pos : Vector2
-@export var target_pos: Vector2
+var start_pos : Vector2
+var target_pos: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
