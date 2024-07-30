@@ -12,8 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://ci3x5k1ed3wcy" path="res://Audio/SFX/rip bozo.ogg" id="10_b7e8n"]
 [ext_resource type="PackedScene" uid="uid://boa8r0y883kop" path="res://Scenes/breaking_pltm.tscn" id="11_3e4jv"]
 [ext_resource type="PackedScene" uid="uid://cu3phblrub62l" path="res://Scenes/Moving_Pltfm.tscn" id="12_ut6k7"]
-[ext_resource type="PackedScene" uid="uid://cpse5686m6odh" path="res://Scenes/bridge_node.tscn" id="13_fkggp"]
-[ext_resource type="PackedScene" uid="uid://cnvlitfjjpn0r" path="res://Scenes/bridge.tscn" id="14_85rnm"]
+[ext_resource type="PackedScene" uid="uid://cpse5686m6odh" path="res://Scenes/Bridge_Node.tscn" id="13_fkggp"]
+[ext_resource type="PackedScene" uid="uid://cnvlitfjjpn0r" path="res://Scenes/Bridge.tscn" id="14_85rnm"]
 [ext_resource type="PackedScene" uid="uid://753dv2afnst8" path="res://Scenes/wall.tscn" id="15_886lj"]
 [ext_resource type="PackedScene" uid="uid://cjigr02ydodrh" path="res://Scenes/portal.tscn" id="16_a3k2t"]
 [ext_resource type="PackedScene" uid="uid://tnjigbfjqjdo" path="res://Scenes/spike_group.tscn" id="17_4peop"]
@@ -5823,8 +5823,86 @@ position = Vector2(2012, -204)
 [node name="Checkpoint3" parent="." instance=ExtResource("9_hy0pn")]
 position = Vector2(3383, -361)
 
-[node name="SpikeGroup" parent="." groups=["Spikes"] instance=ExtResource("17_4peop")]
+[node name="Spikes" type="Node" parent="."]
+
+[node name="SpikeGroup" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
 position = Vector2(1393, -226)
 
-[node name="SpikeGroup2" parent="." groups=["Spikes"] instance=ExtResource("17_4peop")]
+[node name="SpikeGroup2" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
 position = Vector2(1457, -226)
+
+[node name="SpikeGroup3" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(1521, -227)
+
+[node name="SpikeGroup4" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(1489, -294)
+
+[node name="SpikeGroup5" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(1569, -100)
+scale = Vector2(3.95998, 1)
+
+[node name="SpikeGroup6" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(1569, -19)
+
+[node name="SpikeGroup7" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(1670, -173)
+rotation = 1.5708
+scale = Vector2(6.88, 1)
+
+[node name="SpikeGroup8" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(1670, -333)
+rotation = 1.5708
+scale = Vector2(1.96, 1)
+
+[node name="SpikeGroup9" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(1882, -70)
+rotation = 1.5708
+scale = Vector2(7.4, 1)
+
+[node name="SpikeGroup10" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(2394, -83)
+scale = Vector2(7.36004, 1)
+
+[node name="SpikeGroup11" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(2217, -19)
+scale = Vector2(3.44, 1)
+
+[node name="SpikeGroup12" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(2105, -67)
+scale = Vector2(2.37965, 1)
+
+[node name="SpikeGroup13" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(2809, -290)
+scale = Vector2(0.439961, 1)
+
+[node name="SpikeGroup14" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(2849, -307)
+scale = Vector2(1.92004, 1)
+
+[node name="SpikeGroup15" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(2913, -322)
+scale = Vector2(1.92004, 1)
+
+[node name="SpikeGroup16" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(3113, -339)
+scale = Vector2(10.44, 1)
+
+[node name="SpikeGroup17" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(3833, -102)
+scale = Vector2(0.44, 1)
+
+[node name="SpikeGroup18" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(3849, -134)
+scale = Vector2(0.44, 1)
+
+[node name="SpikeGroup19" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(3913, -98)
+scale = Vector2(0.44, 1)
+
+[node name="SpikeGroup20" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(3945, -134)
+scale = Vector2(0.44, 1)
+
+[node name="SpikeGroup21" parent="Spikes" groups=["Spikes"] instance=ExtResource("17_4peop")]
+position = Vector2(3897, -150)
+scale = Vector2(2.40016, 1)
