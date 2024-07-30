@@ -12,7 +12,7 @@ var player_speed : float # Variable that represents players current speed
 const gravity : float = 15 # The gravity var
 const terminal_velocity : int = 350
 
-var jump_force : float = -300  # How powerful the jump is (could be a const)
+var jump_force : float = -250  # How powerful the jump is (could be a const)
 var jump_count : int = 0 # How many time the player has jumped 
 var max_jumps : int = 2 # The max amount of time's the player can jump
 
@@ -44,10 +44,14 @@ func _physics_process(delta):
 	movement_control(delta)
 	move_animation()
 	#-- Breaks level into seperate areas where the plant bridge you change is decided--#
-	if global_position.x > -350 and global_position.x< 250:
+	if global_position.x > 1950 and global_position.x< 1975:
+		index = 1
+	elif global_position.x > 2110 and global_position.x< 2130:
 		index = 0
-	if global_position.x > 250:
-		index = 0
+	elif global_position.x > 2575 and global_position.x< 2600:
+		index = 2
+	elif global_position.x > 3825 and global_position.x< 3850:
+		index = 3
 	#----------------------------------------------------------------------------------#
 
 @warning_ignore("unused_parameter")
