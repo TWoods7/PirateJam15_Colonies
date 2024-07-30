@@ -5954,10 +5954,10 @@ move_dir = Vector2(100, 0)
 position = Vector2(2074, -93)
 move_dir = Vector2(125, 25)
 
-[node name="Enemy" parent="." instance=ExtResource("18_nsxao")]
+[node name="Enemy4" parent="Enemies" instance=ExtResource("18_nsxao")]
 position = Vector2(3045, -390)
 move_dir = Vector2(-200, 0)
 
-[node name="Enemy2" parent="." instance=ExtResource("18_nsxao")]
+[node name="Enemy5" parent="Enemies" instance=ExtResource("18_nsxao")]
 position = Vector2(3100, -392)
 move_dir = Vector2(150, 0)
