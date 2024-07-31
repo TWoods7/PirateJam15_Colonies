@@ -5750,7 +5750,7 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_7kc4p"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 10.6667, 12, 0, 0, 0, 0, 162.667, -30.6665)
+"points": PackedVector2Array(0, 0, 0, 0, 164.035, 190.027, 0, 0, 0, 0, 162.667, -30.6665)
 }
 point_count = 2
 
@@ -5904,7 +5904,7 @@ position = Vector2(657, -2752)
 curve = SubResource("Curve2D_cjyv0")
 
 [node name="movingPltfm11" parent="." instance=ExtResource("11_8bt3a")]
-position = Vector2(441, -3324)
+position = Vector2(869, -3378)
 curve = SubResource("Curve2D_op3jb")
 
 [node name="Enemy2" parent="." instance=ExtResource("13_ytp3t")]
