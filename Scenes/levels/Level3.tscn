@@ -9,11 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://q6v0u6yw4jm8" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Backgroundtiles.png" id="7_p70vh"]
 [ext_resource type="Texture2D" uid="uid://beljm1fcot6yn" path="res://Sprites/Tiles/oneway.png" id="8_s6ihn"]
 [ext_resource type="AudioStream" uid="uid://ci3x5k1ed3wcy" path="res://Audio/SFX/rip bozo.ogg" id="9_q3q5p"]
-[ext_resource type="PackedScene" uid="uid://boa8r0y883kop" path="res://Scenes/Breaking_Pltm.tscn" id="10_p0xrl"]
+[ext_resource type="PackedScene" uid="uid://boa8r0y883kop" path="res://Scenes/breaking_pltm.tscn" id="10_p0xrl"]
 [ext_resource type="PackedScene" uid="uid://cu3phblrub62l" path="res://Scenes/Moving_Pltfm.tscn" id="11_w2rw3"]
 [ext_resource type="PackedScene" uid="uid://d3dvfggcndutq" path="res://Scenes/checkpoint.tscn" id="12_2usi3"]
 [ext_resource type="PackedScene" uid="uid://cjigr02ydodrh" path="res://Scenes/portal.tscn" id="13_5kk7f"]
-[ext_resource type="PackedScene" path="res://Scenes/spike_group.tscn" id="14_lpgid"]
+[ext_resource type="PackedScene" uid="uid://tnjigbfjqjdo" path="res://Scenes/spike_group.tscn" id="14_lpgid"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t30d1"]
 resource_name = "Tree and bushes"

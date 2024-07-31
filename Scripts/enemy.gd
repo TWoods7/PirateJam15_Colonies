@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var World = "res://Scripts/World.gd"
+@onready var World = $"../.."
 @export var move_speed = 30.0
 @export var move_dir : Vector2
 
