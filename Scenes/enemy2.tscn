@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://db0blh7q8i04w"]
 
-[ext_resource type="Script" path="res://Scenes/enemy2.gd" id="1_bsgri"]
+[ext_resource type="Script" path="res://Scripts/enemy2.gd" id="1_bsgri"]
 [ext_resource type="Texture2D" uid="uid://c5800aqmln8fx" path="res://Sprites/title screen/volume knob.png" id="2_ee5mh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sasgd"]

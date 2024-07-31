@@ -34,7 +34,7 @@ var is_dashing = false #check for if the player is currently dashing
 var can_dash = true #Check for if cooldown is over and the player can dash
 
 var has_double_jump = true
-var has_dash = true
+var has_dash = false
 var has_bridge = true
 var has_wall_jump = true
 
