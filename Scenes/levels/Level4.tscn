@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkbu73m60vwop"]
+
+[ext_resource type="Texture2D" uid="uid://dve850y14p5t3" path="res://Sprites/title screen/Background.png" id="1_3yuud"]
+[ext_resource type="FontFile" uid="uid://c82ei6t21k4k6" path="res://fonts/PixeloidSans.ttf" id="2_e1wmh"]
+[ext_resource type="Theme" uid="uid://diyljqya3ytvc" path="res://button_theme.tres" id="3_d8mxm"]
+[ext_resource type="Script" path="res://Scripts/menu_scripts/Back_Button.gd" id="4_g282t"]
+[ext_resource type="AudioStream" uid="uid://ci3ts02utgdng" path="res://Audio/SFX/select_option.ogg" id="5_ik5c2"]
+
+[node name="Thankyou" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -22.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3yuud")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -37.0
+offset_right = 306.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title_label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_e1wmh")
+theme_override_font_sizes/font_size = 60
+text = "Thanks for playing!"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.658
+anchor_right = 0.5
+anchor_bottom = 0.658
+offset_left = -100.0
+offset_top = -32.5
+offset_right = 100.0
+offset_bottom = 32.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back_button" type="Button" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_d8mxm")
+theme_override_fonts/font = ExtResource("2_e1wmh")
+theme_override_font_sizes/font_size = 45
+text = "Menu"
+script = ExtResource("4_g282t")
+
+[node name="Hover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ik5c2")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="HBoxContainer2/back_button" to="HBoxContainer2/back_button" method="_on_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer2/back_button" to="HBoxContainer2/back_button" method="_on_pressed"]
