@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ca0fp1pirwg2o"]
+[gd_scene load_steps=34 format=3 uid="uid://ca0fp1pirwg2o"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_hjs44"]
 [ext_resource type="Texture2D" uid="uid://c1i64g8wgq5c3" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="2_ika17"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cu3phblrub62l" path="res://Scenes/Moving_Pltfm.tscn" id="11_8bt3a"]
 [ext_resource type="PackedScene" uid="uid://cu4xs0tjgwrqn" path="res://Scenes/Player.tscn" id="12_btxcl"]
 [ext_resource type="PackedScene" uid="uid://db0blh7q8i04w" path="res://Scenes/enemy2.tscn" id="13_ytp3t"]
+[ext_resource type="PackedScene" uid="uid://cjigr02ydodrh" path="res://Scenes/portal.tscn" id="14_nibyx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t30d1"]
 resource_name = "Tree and bushes"
@@ -5909,3 +5910,6 @@ curve = SubResource("Curve2D_op3jb")
 [node name="Enemy2" parent="." instance=ExtResource("13_ytp3t")]
 position = Vector2(136, -6421)
 audio_bus_name = &"SFX"
+
+[node name="Portal" parent="." instance=ExtResource("14_nibyx")]
+position = Vector2(795, -3639)

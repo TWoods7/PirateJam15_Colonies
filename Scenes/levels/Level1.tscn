@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://753dv2afnst8" path="res://Scenes/wall.tscn" id="15_886lj"]
 [ext_resource type="PackedScene" uid="uid://cjigr02ydodrh" path="res://Scenes/portal.tscn" id="16_a3k2t"]
 [ext_resource type="PackedScene" uid="uid://tnjigbfjqjdo" path="res://Scenes/spike_group.tscn" id="17_4peop"]
-[ext_resource type="PackedScene" path="res://Scenes/enemy.tscn" id="18_nsxao"]
+[ext_resource type="PackedScene" uid="uid://stpbsqqwu24a" path="res://Scenes/enemy.tscn" id="18_nsxao"]
 [ext_resource type="Texture2D" uid="uid://cc8k4entthsph" path="res://Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="19_rpsw7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t30d1"]
